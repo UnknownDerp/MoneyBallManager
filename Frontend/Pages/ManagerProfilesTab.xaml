@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Frontend.Pages.ManagerProfilesTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Frontend.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FFF0F0FF">
+        <StackPanel Name="CreateProfileView" Orientation="Vertical">
+            <ListBox Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Name="ManagerProfilesListBox" Width="200" HorizontalAlignment="Left" MinHeight="642">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding Name}" FontSize="14"/>
+                            <TextBlock Text="{Binding Created}" FontSize="12"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Create Profile" Width="98" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,5,0,0" Click="CreateNewManagerProfileClick"/>
+                <Button Content="Edit Profile" Width="98" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,5,0,0" Click="EditManagerProfileClick">
+                    <Button.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=ManagerProfilesListBox, Path=SelectedIndex}" Value="-1">
+                                    <Setter Property="Button.IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <WrapPanel Name="ManagerProfileTabControl"></WrapPanel>
+    </Grid>
+</UserControl>

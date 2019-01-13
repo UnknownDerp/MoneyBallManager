@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Frontend.Pages.ManagerProfileTabControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Frontend.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Profile Name:"></Label>
+                <TextBox Name="ProfileNameTextBox" HorizontalAlignment="Left" Height="25" Width="200" VerticalContentAlignment="Center"/>
+            </StackPanel>
+            <TabControl TabStripPlacement="Top" HorizontalContentAlignment="Left" Height="Auto" VerticalAlignment="Stretch">
+                <TabItem Style="{StaticResource TabStyleSmall}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Name="GoalKeeperTab" Height="20" Width="20" Source="../Icons/icons8-soccer-goal-50.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Goalkeeper" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
+                        <Grid Background="Transparent" Height="200">
+                            <Border>
+                                <StackPanel Orientation="Horizontal">
+                                <local:HintTextBox FieldName="Test" VisibleLabel="Visible" Size="Tiny"/>
+                                <local:HintTextBox FieldName="Test1" VisibleLabel="Visible" Size="Small"/>
+                                 <local:HintTextBox VisibleLabel="Visible" FieldName="Test2" Size="Normal"/>
+                                 <local:HintTextBox VisibleLabel="Visible" FieldName="Test3" Size="Large"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Style="{StaticResource TabStyleSmall}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Name="DefenderTab" Height="20" Width="20" Source="../Icons/icons8-shield-50.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Defender" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid Background="#FFF0F0FF" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
+                    </Grid>
+                </TabItem>
+                <TabItem Style="{StaticResource TabStyleSmall}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Name="MidfielderTab" Height="20" Width="20" Source="../Icons/icons8-player-change-50.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Midfielder" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid Background="#FFF0F0FF" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
+                    </Grid>
+                </TabItem>
+                <TabItem Style="{StaticResource TabStyleSmall}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Name="ForwardTab" Height="20" Width="20" Source="../Icons/icons8-sword-50.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Forward" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid Background="#FFF0F0FF" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Name="ButtonsWrapPanel" Width="Auto" Height="Auto" Margin="0, 3, 0 ,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

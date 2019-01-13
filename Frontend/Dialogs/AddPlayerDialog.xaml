@@ -1,0 +1,33 @@
+﻿<Window x:Class="Frontend.Dialogs.AddPlayerDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frontend.Dialogs"
+        xmlns:converters="clr-namespace:Frontend.Converters"
+        xmlns:pages="clr-namespace:Frontend.Pages"
+        mc:Ignorable="d"
+        Title="Add Player" Height="165" Width="330" WindowStyle="ToolWindow" ResizeMode="NoResize" Icon="/Frontend;component/Icons/icons8-teams-50.png" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <converters:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConvert"/>
+    </Window.Resources>
+    <StackPanel Background="#FFF0F0FF" Orientation="Vertical">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <pages:HintTextBox x:Name="NameTextBox" VisibleLabel="Collapsed" FieldName="Name"/>
+                <pages:HintTextBox x:Name="HeightTextBox" VisibleHintText="False" VisibleLabel="Visible" InputType="Integer" FieldName="Height" Size="Small" HorizontalAlignment="Right"/>
+                <pages:HintTextBox x:Name="WeightTextBox" VisibleHintText="False" VisibleLabel="Visible" InputType="Integer" FieldName="Weight" Size="Small" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <pages:HintTextBox x:Name="ClubTextBox" VisibleLabel="Collapsed" FieldName="Club"/>
+                <ComboBox Name="PositionComboBox" Width="150" Height="25" Margin="2,0,5,5"/>
+                <ComboBox Name="RoleComboBox" Width="150" Height="25" Margin="2,0,5,5"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Width="75" Height="25" Content="Add" Margin="0,5,5,5" Click="AddPlayerClick"/>
+            <Button Width="75" Height="25" Content="Cancel" Margin="0,5,5,5" IsCancel="True"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
+
