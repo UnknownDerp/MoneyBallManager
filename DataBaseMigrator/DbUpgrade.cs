@@ -36,15 +36,23 @@ namespace DataBaseMigrator
         private void RunDatabaseMigration()
         {
             var scripts = GetFiles("Scripts").ToList();
-            RunUpgrade(scripts, true);
+            var migratedScripts = _dbContext.MigrationScripts.Select(x => x).ToList();
+
+            var scriptsToRun = scripts.Where(x => !migratedScripts.Select(y => y.FileName).ToList().Contains(GetPureFilename(x))).ToList();
+            RunUpgrade(scriptsToRun, true);
         }
 
         private void AddFileToMigratedList(string script)
         {
-            var filename = script.Split('\\')[1];
-            var migrationScript = new DatabaseMigrationScript(){FileName = script, MigrationDate = DateTime.Now.ToString("dd MMM yyyy HH:mm") };
+            var filename = GetPureFilename(script);
+            var migrationScript = new DatabaseMigrationScript(){FileName = filename, MigrationDate = DateTime.Now.ToString("dd MMM yyyy HH:mm") };
             _dbContext.MigrationScripts.Add(migrationScript);
             _dbContext.SaveChanges();
+        }
+
+        private string GetPureFilename(string filepath)
+        {
+            return filepath.Split('\\')[1];
         }
 
         private void RunUpgrade(List<string> scripts, bool logAsUpgrade)
@@ -54,7 +62,7 @@ namespace DataBaseMigrator
                 var content = File.ReadAllText(script);
                 try
                 {
-                    //_dbContext.Database.ExecuteSqlCommand(content);
+                    _dbContext.Database.ExecuteSqlCommand(content);
                     if (logAsUpgrade)
                     {
                         AddFileToMigratedList(script);

@@ -82,6 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MbmStartUp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +94,10 @@
     <ProjectReference Include="..\CommandQuery\CommandQuery.csproj">
       <Project>{d749041c-44a2-4523-ab9d-548df352bdd1}</Project>
       <Name>CommandQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBaseMigrator\DatabaseMigrator.csproj">
+      <Project>{1b5f90d9-fe51-4456-be2e-3d007157b7c7}</Project>
+      <Name>DatabaseMigrator</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{00795a43-fa37-41d3-a745-f39a41881955}</Project>

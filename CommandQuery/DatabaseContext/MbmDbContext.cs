@@ -17,7 +17,7 @@ namespace CommandQuery.DatabaseContext
             
             ConnectionString = new SQLiteConnectionStringBuilder
             {
-                DataSource = "../Database/database.db",
+                DataSource = "C:\\Users\\Goustmachine\\Documents\\Genvägar\\Programming\\MoneyBallManager\\database.db",
                 ForeignKeys = true
             }.ConnectionString
         }, true)
@@ -33,6 +33,7 @@ namespace CommandQuery.DatabaseContext
         public void ClearDb()
         {
             Players.RemoveRange(Players);
+            ManagerProfiles.RemoveRange(ManagerProfiles);
             SaveChanges();
         }
     }
