@@ -39,6 +39,7 @@ namespace Frontend
         {
             Clock.MoveClock(width);
             PlayersAndMatchesControl.ListBoxResize(height);
+            ClubsTabControl.ListBoxResize(height);
 #if DEBUG
             Console.Out.WriteLine($"{width}x {height}y");
 #endif

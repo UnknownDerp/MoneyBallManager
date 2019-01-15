@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Club.cs" />
     <Compile Include="Entities\DatabaseMigrationScript.cs" />
     <Compile Include="Entities\ManagerProfile.cs" />
     <Compile Include="Entities\Player.cs" />

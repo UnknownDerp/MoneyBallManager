@@ -11,6 +11,7 @@ namespace CommandQuery.DatabaseContext
         public DbSet<Player> Players { get; set; }
         public DbSet<ManagerProfile> ManagerProfiles { get; set; }
         public DbSet<DatabaseMigrationScript> MigrationScripts { get; set; }
+        public DbSet<Club> Clubs { get; set; }
 
         public MbmDbContext() : base(new SQLiteConnection()
         {

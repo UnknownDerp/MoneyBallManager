@@ -69,6 +69,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.109.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -90,6 +91,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dialogs\AddClubDialog.xaml.cs">
+      <DependentUpon>AddClubDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Graphs\GraphingWindow.xaml.cs">
       <DependentUpon>GraphingWindow.xaml</DependentUpon>
     </Compile>
@@ -98,6 +102,12 @@
     </Compile>
     <Compile Include="Pages\Clock.xaml.cs">
       <DependentUpon>Clock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClubsTabControl.xaml.cs">
+      <DependentUpon>ClubsTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HintTextBox.xaml.cs">
       <DependentUpon>HintTextBox.xaml</DependentUpon>
@@ -108,6 +118,10 @@
     <Compile Include="Pages\ManagerProfileTabControl.xaml.cs">
       <DependentUpon>ManagerProfileTabControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dialogs\AddClubDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\AddPlayerDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,6 +152,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Clock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ClubsTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ColorPicker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

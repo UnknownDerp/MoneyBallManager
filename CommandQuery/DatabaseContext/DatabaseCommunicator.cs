@@ -22,5 +22,9 @@ namespace CommandQuery.DatabaseContext
         {
             return _dbContext.Players.Select(x => x).ToList();
         }
+        public List<Club> GetClubsList()
+        {
+            return _dbContext.Clubs.Select(x => x).ToList();
+        }
     }
 }

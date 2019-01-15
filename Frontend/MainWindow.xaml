@@ -46,6 +46,15 @@
                 <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
+                            <Image Name="ClubsIcon" Height="25" Width="25" Source="Icons/icons8-teams-50.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Clubs" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <pages:ClubsTabControl x:Name="ClubsTabControl"/>
+                </TabItem>
+                <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
                             <Image Name="SettingsIcon" Height="25" Width="25" Source="Icons/icons8-settings-50.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Settings" Margin="5,0,0,0"/>
                         </StackPanel>

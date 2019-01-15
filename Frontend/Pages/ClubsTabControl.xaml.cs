@@ -20,44 +20,44 @@ using Frontend.Dialogs;
 namespace Frontend.Pages
 {
     /// <summary>
-    /// Interaction logic for PlayersAndMatchesControl.xaml
+    /// Interaction logic for ClubsTabControl.xaml
     /// </summary>
-    public partial class PlayersAndMatchesControl : UserControl
+    public partial class ClubsTabControl : UserControl
     {
-        private readonly ObservableCollection<Player> _players;
-        public PlayersAndMatchesControl()
+        private readonly ObservableCollection<Club> _clubs;
+        public ClubsTabControl()
         {
             InitializeComponent();
             var dbCommun = new DatabaseCommunicator();
-            _players = new ObservableCollection<Player>(dbCommun.GetPlayersList());
-            PlayersListBox.ItemsSource = _players;
+            _clubs = new ObservableCollection<Club>(dbCommun.GetClubsList());
+            ClubsListBox.ItemsSource = _clubs;
         }
+
         public void ListBoxResize(double height)
         {
             var newValue = height - 133;
             if (newValue > 0)
             {
-                PlayersListBox.Height = newValue;
+                ClubsListBox.Height = newValue;
             }
         }
-        private void AddPlayerButtonClick(object sender, RoutedEventArgs e)
+
+        private void AddClubButtonClick(object sender, RoutedEventArgs e)
         {
-            var addPlayerDialog = new AddPlayerDialog() { Owner = Window.GetWindow(this) };
-            var result = addPlayerDialog.ShowDialog();
+            var addClubDialog = new AddClubDialog() { Owner = Window.GetWindow(this) };
+            var result = addClubDialog.ShowDialog();
             if (result != null && result == true)
             {
-                _players.Add(addPlayerDialog.Player);
+                //_clubs.Add(addClubDialog.Club);
             }
         }
 
-        private void SavePlayersButtonClick(object sender, RoutedEventArgs e)
+        private void SaveClubsButtonClick(object sender, RoutedEventArgs e)
         {
-
         }
 
-        private void ImportPlayersButtonClick(object sender, RoutedEventArgs e)
+        private void ImportClubsButtonClick(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }
