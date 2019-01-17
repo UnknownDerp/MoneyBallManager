@@ -26,5 +26,11 @@ namespace CommandQuery.DatabaseContext
         {
             return _dbContext.Clubs.Select(x => x).ToList();
         }
+
+        public void ResetDatabase()
+        {
+            _dbContext.ClearDb();
+        }
+
     }
 }

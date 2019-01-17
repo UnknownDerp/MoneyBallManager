@@ -29,12 +29,18 @@ namespace CommandQuery.DatabaseContext
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Player>()
+                .HasRequired<Club>(x => x.Club)
+                .WithMany(y => y.Players)
+                .HasForeignKey<int>(z => z.ClubId);
         }
 
         public void ClearDb()
         {
             Players.RemoveRange(Players);
             ManagerProfiles.RemoveRange(ManagerProfiles);
+            Clubs.RemoveRange(Clubs);
             SaveChanges();
         }
     }

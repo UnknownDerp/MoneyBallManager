@@ -56,15 +56,10 @@
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Name="SettingsIcon" Height="25" Width="25" Source="Icons/icons8-settings-50.png"/>
-                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Settings" Margin="5,0,0,0"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Administration" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <Grid Background="#FFF0F0FF">
-                        <graphs:GraphingWindow x:Name="GraphingWindow">
-                            
-                            
-                        </graphs:GraphingWindow>
-                    </Grid>
+                    <pages:AdministrationTabControl />
                 </TabItem>
             </TabControl>
         </Grid>

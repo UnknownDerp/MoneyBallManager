@@ -35,7 +35,7 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <TextBlock Text="{Binding Name}" FontSize="14"/>
-                                    <TextBlock Text="{Binding Club}" FontSize="12"/>
+                                    <TextBlock Text="{Binding Club.Name}" FontSize="12"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

@@ -36,6 +36,7 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                     <TextBlock Text="{Binding Name}" FontSize="14"/>
+                                    <TextBlock Text="{Binding Players.Count, StringFormat='No. of Players: {0}'}" FontSize="12"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

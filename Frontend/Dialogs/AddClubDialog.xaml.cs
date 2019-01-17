@@ -23,6 +23,9 @@ namespace Frontend.Dialogs
         public Club Club => new Club()
         {
             Name = NameTextBox.ComponentText,
+            HomeColor = HomeColorPicker.ColorPickedHex,
+            AwayColor = AwayColorPicker.ColorPickedHex,
+            ThirdColor = ThirdColorPicker.ColorPickedHex
         };
 
         public AddClubDialog()
@@ -32,9 +35,20 @@ namespace Frontend.Dialogs
 
         private void AddClubClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (IsValid())
+            {
+                DialogResult = true;
+            }
         }
 
-
+        private bool IsValid()
+        {
+            if (NameTextBox.IsNullOrEmpty())
+            {
+                NameTextBox.HintText.Foreground = Brushes.Red;
+                return false;
+            }
+            return true;
+        }
     }
 }

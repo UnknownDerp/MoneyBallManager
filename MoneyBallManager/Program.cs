@@ -12,7 +12,7 @@ namespace MoneyBallManager
             var mgm = new MbmDbContext();
 
             mgm.ClearDb();
-            var p1 = new Player(){Name = "Marco Asensio", Position = PositionTypes.Midfielder, PlayerRole = PlayerRoleTypes.Creative, Height = 182, Club = "Real Madrid", Weight = 76};
+            var p1 = new Player(){Name = "Marco Asensio", Position = PositionTypes.Midfielder, PlayerRole = PlayerRoleTypes.Creative, Height = 182, ClubId = 1, Weight = 76};
             mgm.Players.Add(p1);
             mgm.SaveChanges();
             Console.Read();

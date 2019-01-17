@@ -48,7 +48,7 @@ namespace Frontend.Pages
             var result = addClubDialog.ShowDialog();
             if (result != null && result == true)
             {
-                //_clubs.Add(addClubDialog.Club);
+                _clubs.Add(addClubDialog.Club);
             }
         }
 

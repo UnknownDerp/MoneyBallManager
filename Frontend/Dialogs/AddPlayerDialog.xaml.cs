@@ -15,7 +15,7 @@ namespace Frontend.Dialogs
         public Player Player => new Player
         {
             Name = NameTextBox.ComponentText,
-            Club = string.IsNullOrEmpty(ClubTextBox.ComponentText) ? "Free Agent" : ClubTextBox.ComponentText,
+            //Club = string.IsNullOrEmpty(ClubTextBox.ComponentText) ? "Free Agent" : ClubTextBox.ComponentText,
             Height = int.Parse(HeightTextBox.ComponentText),
             Weight = int.Parse(WeightTextBox.ComponentText)
         };
