@@ -19,7 +19,8 @@
                 <pages:HintTextBox x:Name="WeightTextBox" VisibleHintText="False" VisibleLabel="Visible" InputType="Integer" FieldName="Weight" Size="Small" HorizontalAlignment="Right"/>
             </StackPanel>
             <StackPanel Orientation="Vertical">
-                <pages:HintTextBox x:Name="ClubTextBox" VisibleLabel="Collapsed" FieldName="Club"/>
+                <!--<pages:HintTextBox x:Name="ClubTextBox" VisibleLabel="Collapsed" FieldName="Club"/>-->
+                <ComboBox Name="ClubsComboBox" Width="150" Height="25" Margin="2,0,5,5" ItemsSource="{Binding Clubs}" DisplayMemberPath="Name" SelectedValuePath="Id"/>
                 <ComboBox Name="PositionComboBox" Width="150" Height="25" Margin="2,0,5,5"/>
                 <ComboBox Name="RoleComboBox" Width="150" Height="25" Margin="2,0,5,5"/>
             </StackPanel>

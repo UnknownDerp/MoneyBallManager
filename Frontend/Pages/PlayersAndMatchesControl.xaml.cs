@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using CommandQuery.DatabaseContext;
 using Entities.Entities;
 using Frontend.Dialogs;
+using Frontend.Extensions;
 
 namespace Frontend.Pages
 {
@@ -29,8 +30,9 @@ namespace Frontend.Pages
         {
             InitializeComponent();
             var dbCommun = new DatabaseCommunicator();
-            _players = new ObservableCollection<Player>(dbCommun.GetPlayersList());
+            _players = new ObservableCollection<Player>(dbCommun.GetAll<Player>());
             PlayersListBox.ItemsSource = _players;
+            DataContext = this;
         }
         public void ListBoxResize(double height)
         {
@@ -46,7 +48,7 @@ namespace Frontend.Pages
             var result = addPlayerDialog.ShowDialog();
             if (result != null && result == true)
             {
-                _players.Add(addPlayerDialog.Player);
+                _players.AddAndSave(addPlayerDialog.Player);
             }
         }
 

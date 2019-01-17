@@ -27,7 +27,7 @@ namespace Frontend
 
 
             InitializeComponent();
-
+            
             Thread.Sleep(3000);
             //test.Close(TimeSpan.FromSeconds(3));
             SizeToContent = SizeToContent.WidthAndHeight;
@@ -60,6 +60,10 @@ namespace Frontend
             base.OnStateChanged(e);
             MoveElements(this.Width, this.Height);
         }
-        
+
+        private void MainTabs_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
     }
 }

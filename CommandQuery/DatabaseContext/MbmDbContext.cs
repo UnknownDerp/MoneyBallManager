@@ -41,6 +41,7 @@ namespace CommandQuery.DatabaseContext
             Players.RemoveRange(Players);
             ManagerProfiles.RemoveRange(ManagerProfiles);
             Clubs.RemoveRange(Clubs);
+            Clubs.Add(new Club(){ Id = 1, Name = "Free Agent", HomeColor = "#00FFFFFF", AwayColor = "#00FFFFFF", ThirdColor = "#00FFFFFF", IsDefault = true});
             SaveChanges();
         }
     }

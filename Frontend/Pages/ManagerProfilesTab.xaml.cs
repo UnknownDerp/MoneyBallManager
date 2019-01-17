@@ -28,8 +28,9 @@ namespace Frontend.Pages
         {
             InitializeComponent();
             var dbCommunicator = new DatabaseCommunicator();
-            _managerProfiles = new ObservableCollection<ManagerProfile>(dbCommunicator.GetManagerProfiles().ToList());
+            _managerProfiles = new ObservableCollection<ManagerProfile>(dbCommunicator.GetAll<ManagerProfile>());
             ManagerProfilesListBox.ItemsSource = _managerProfiles;
+            DataContext = this;
         }
         
         private void CreateNewManagerProfileClick(object sender, RoutedEventArgs e)

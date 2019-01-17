@@ -115,6 +115,7 @@
     <Compile Include="Dialogs\AddClubDialog.xaml.cs">
       <DependentUpon>AddClubDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\ObservableCollectionExtension.cs" />
     <Compile Include="Graphs\GraphingWindow.xaml.cs">
       <DependentUpon>GraphingWindow.xaml</DependentUpon>
     </Compile>
@@ -203,6 +204,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\MbmTabItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PlayersAndMatchesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -213,6 +218,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\MbmTabItem.xaml.cs">
+      <DependentUpon>MbmTabItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PlayersAndMatchesControl.xaml.cs">
       <DependentUpon>PlayersAndMatchesControl.xaml</DependentUpon>
     </Compile>

@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Entities.Entities;
+using Entities.Interfaces;
 
 namespace CommandQuery.DatabaseContext
 {
@@ -13,18 +16,41 @@ namespace CommandQuery.DatabaseContext
             _dbContext = new MbmDbContext();
         }
 
-        public List<ManagerProfile> GetManagerProfiles()
+        public List<T> GetAll<T>() where T : class
         {
-            return _dbContext.ManagerProfiles.Select(x => x).ToList();
+            var items = _dbContext.Set<T>().Select(x => x).ToList();
+            return items;
+        }
+        public List<T> GetCollections<T>(Expression<Func<T, T>> predicate) where T : class
+        {
+            var items = _dbContext.Set<T>().Select(predicate).ToList();
+            return items;
         }
 
-        public List<Player> GetPlayersList()
+        public T Get<T>(Expression<Func<T, bool>> predicate) where T : class
         {
-            return _dbContext.Players.Select(x => x).ToList();
+            var item = _dbContext.Set<T>().FirstOrDefault(predicate);
+            if (item == null)
+            {
+                throw new NoEntityFoundException();
+            }
+            return item;
         }
-        public List<Club> GetClubsList()
+
+        //public void Set<T>(Expression<Func<T>> predicate) where T : class
+        //{
+        //    _dbContext.
+        //}
+
+        public void SaveChanges()
         {
-            return _dbContext.Clubs.Select(x => x).ToList();
+            _dbContext.SaveChanges();
+        }
+
+        public void Add<T>(T entity) where T : class
+        {
+            _dbContext.Set<T>().Add(entity);
+            _dbContext.SaveChanges();
         }
 
         public void ResetDatabase()
@@ -32,5 +58,13 @@ namespace CommandQuery.DatabaseContext
             _dbContext.ClearDb();
         }
 
+    }
+
+    public class NoEntityFoundException : Exception
+    {
+        public NoEntityFoundException() : base()
+        {
+            
+        }
     }
 }

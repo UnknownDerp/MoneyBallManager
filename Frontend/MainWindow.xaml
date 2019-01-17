@@ -22,7 +22,7 @@
             </StackPanel>
         </Grid>
         <Grid>
-            <TabControl x:Name="MainTabs" TabStripPlacement="Left" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Margin="0,50,0,0" >
+            <TabControl x:Name="MainTabs" TabStripPlacement="Left" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Margin="0,50,0,0" SelectionChanged="MainTabs_OnSelectionChanged">
                 <TabItem Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
@@ -37,7 +37,7 @@
                 <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="PlayersIcon" Height="25" Width="25" Source="Icons/icons8-teams-50.png"/>
+                            <Image Name="PlayersIcon" Height="25" Width="25" Source="Icons/icons8-jersey-50.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Players &amp; Matches" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>

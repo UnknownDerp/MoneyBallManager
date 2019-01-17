@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
+using CommandQuery.DatabaseContext;
 using Entities.Entities;
 using Entities.Enums;
 
@@ -12,19 +14,32 @@ namespace Frontend.Dialogs
     /// </summary>
     public partial class AddPlayerDialog : Window
     {
-        public Player Player => new Player
+        public List<Club> Clubs { get;}
+
+        public Player Player
         {
-            Name = NameTextBox.ComponentText,
-            //Club = string.IsNullOrEmpty(ClubTextBox.ComponentText) ? "Free Agent" : ClubTextBox.ComponentText,
-            Height = int.Parse(HeightTextBox.ComponentText),
-            Weight = int.Parse(WeightTextBox.ComponentText)
-        };
+            get
+            {
+                var club = new DatabaseCommunicator().Get<Club>(x => x.Id == (int) ClubsComboBox.SelectedValue);
+                return new Player()
+                {
+                    Name = NameTextBox.ComponentText,
+                    ClubId = club.Id,
+                    Height = int.Parse(HeightTextBox.ComponentText),
+                    Weight = int.Parse(WeightTextBox.ComponentText)
+                };
+            }
+        }
 
         public AddPlayerDialog()
         {
             InitializeComponent();
+            var communicator = new DatabaseCommunicator();
             PositionComboBox.ItemsSource = Enum.GetValues(typeof(PositionTypes)).Cast<PositionTypes>();
             RoleComboBox.ItemsSource = Enum.GetValues(typeof(PlayerRoleTypes)).Cast<PlayerRoleTypes>();
+            DataContext = this;
+            Clubs = communicator.GetAll<Club>();
+            ClubsComboBox.SelectedValue = communicator.Get<Club>(x => x.IsDefault).Id;
         }
 
         private void AddPlayerClick(object sender, RoutedEventArgs e)

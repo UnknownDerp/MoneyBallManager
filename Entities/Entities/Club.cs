@@ -16,6 +16,7 @@ namespace Entities.Entities
         public string HomeColor { get; set; }
         public string AwayColor { get; set; }
         public string ThirdColor { get; set; }
+        public bool IsDefault { get; set; }
         public virtual List<Player> Players { get; set; }
     }
 }

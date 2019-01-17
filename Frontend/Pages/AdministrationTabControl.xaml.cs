@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CommandQuery.DatabaseContext;
+using Entities.Entities;
 
 namespace Frontend.Pages
 {
@@ -21,9 +22,14 @@ namespace Frontend.Pages
     /// </summary>
     public partial class AdministrationTabControl : UserControl
     {
+        public List<Club> Clubs { get; }
         public AdministrationTabControl()
         {
             InitializeComponent();
+            var communicator = new DatabaseCommunicator();
+            Clubs = communicator.GetAll<Club>();
+            ClubsComboBox.SelectedValue = communicator.Get<Club>(x => x.IsDefault).Id;
+            DataContext = this;
         }
 
 
@@ -31,6 +37,19 @@ namespace Frontend.Pages
         {
             var dbCommun = new DatabaseCommunicator();
             dbCommun.ResetDatabase();
+        }
+
+        private void SetDefaultClub_Click(object sender, RoutedEventArgs e)
+        {
+            var dbComm = new DatabaseCommunicator();
+            var clubs = dbComm.GetAll<Club>();
+            foreach (var club in clubs)
+            {
+                club.IsDefault = false;
+            }
+            var selectedClub = clubs.First(x => x.Id == (int)ClubsComboBox.SelectedValue);
+            selectedClub.IsDefault = true;
+            dbComm.SaveChanges();
         }
     }
 }

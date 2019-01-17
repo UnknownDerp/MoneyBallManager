@@ -25,7 +25,9 @@ namespace Frontend.Dialogs
             Name = NameTextBox.ComponentText,
             HomeColor = HomeColorPicker.ColorPickedHex,
             AwayColor = AwayColorPicker.ColorPickedHex,
-            ThirdColor = ThirdColorPicker.ColorPickedHex
+            ThirdColor = ThirdColorPicker.ColorPickedHex,
+            IsDefault = false,
+            Players = new List<Player>()
         };
 
         public AddClubDialog()

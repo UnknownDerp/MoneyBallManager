@@ -5,4 +5,3 @@
 	`AwayColor`	TEXT NOT NULL,
 	`ThirdColor`	TEXT NOT NULL
 );
-INSERT INTO `Club` VALUES (1,'Free Agent', '#00FFFFFF', '#00FFFFFF', '#00FFFFFF');

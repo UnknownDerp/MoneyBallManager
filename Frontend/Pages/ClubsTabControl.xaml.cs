@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using CommandQuery.DatabaseContext;
 using Entities.Entities;
 using Frontend.Dialogs;
+using Frontend.Extensions;
 
 namespace Frontend.Pages
 {
@@ -29,8 +30,9 @@ namespace Frontend.Pages
         {
             InitializeComponent();
             var dbCommun = new DatabaseCommunicator();
-            _clubs = new ObservableCollection<Club>(dbCommun.GetClubsList());
+            _clubs = new ObservableCollection<Club>(dbCommun.GetAll<Club>());
             ClubsListBox.ItemsSource = _clubs;
+            DataContext = this;
         }
 
         public void ListBoxResize(double height)
@@ -48,7 +50,7 @@ namespace Frontend.Pages
             var result = addClubDialog.ShowDialog();
             if (result != null && result == true)
             {
-                _clubs.Add(addClubDialog.Club);
+                _clubs.AddAndSave(addClubDialog.Club);
             }
         }
 

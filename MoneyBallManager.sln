@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandQuery", "CommandQuer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseMigrator", "DataBaseMigrator\DatabaseMigrator.csproj", "{1B5F90D9-FE51-4456-BE2E-3D007157B7C7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0C30A6D4-95CC-4146-9E2C-D3D76399C577}"
+	ProjectSection(SolutionItems) = preProject
+		Backlog.txt = Backlog.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
