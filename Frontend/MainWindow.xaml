@@ -8,13 +8,13 @@
         xmlns:graphs="clr-namespace:Frontend.Graphs"
         xmlns:colorConstants="clr-namespace:Frontend.Colors"
         mc:Ignorable="d"
-        Title="Money Ball Manager" Height="1080" Width="1920" MinHeight="768" MinWidth="1320" Icon="Logos/logo.png"
+        Title="Money Ball Manager" Height="1080" Width="1920" Icon="Logos/logo.png"
         Style="{StaticResource WindowStyle}" WindowStartupLocation="CenterScreen"
-        SizeChanged="MainWindowChangedSize">
+        SizeChanged="MainWindowChangedSize" MinWidth="1920" MinHeight="1080">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close" Executed="CloseCommandHandler"/>
     </Window.CommandBindings>
-    <Grid Height="Auto" Width="Auto" Background="#FF1D2633">
+    <Grid Background="#FF1D2633">
         <Grid Height="50" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Stretch">
                 <Image Name="MbmIcon" Width="45" Height="45" HorizontalAlignment="Left" Source="Logos/logo.png"/>
@@ -35,7 +35,7 @@
                         <pages:ManagerProfilesTab/>
                     </Grid>
                 </TabItem>
-                <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
+                <TabItem Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Name="PlayersIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-jersey-32.png"/>
@@ -44,7 +44,7 @@
                     </TabItem.Header>
                     <pages:PlayersAndMatchesControl x:Name="PlayersAndMatchesControl"/>
                 </TabItem>
-                <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
+                <TabItem Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Name="ClubsIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-teams-32.png"/>
@@ -53,14 +53,15 @@
                     </TabItem.Header>
                     <pages:ClubsTabControl x:Name="ClubsTabControl"/>
                 </TabItem>
-                <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
+                <TabItem Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Image Name="SettingsIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-maintenance-32.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Administration" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <pages:AdministrationTabControl />
+                    <!--<pages:AdministrationTabControl />-->
+                    <pages:Pitch />
                 </TabItem>
             </TabControl>
         </Grid>

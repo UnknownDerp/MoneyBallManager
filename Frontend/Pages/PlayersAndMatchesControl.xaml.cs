@@ -34,14 +34,14 @@ namespace Frontend.Pages
             PlayersListBox.ItemsSource = _players;
             DataContext = this;
         }
-        public void ListBoxResize(double height)
-        {
-            var newValue = height - 133;
-            if (newValue > 0)
-            {
-                PlayersListBox.Height = newValue;
-            }
-        }
+        //public void ListBoxResize(double height)
+        //{
+        //    var newValue = height - 133;
+        //    if (newValue > 0)
+        //    {
+        //        PlayersListBox.Height = newValue;
+        //    }
+        //}
         private void AddPlayerButtonClick(object sender, RoutedEventArgs e)
         {
             var addPlayerDialog = new AddPlayerDialog() { Owner = Window.GetWindow(this) };

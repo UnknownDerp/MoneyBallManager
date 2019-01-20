@@ -42,6 +42,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
+                
             </StackPanel>
         </Grid>
     </Grid>

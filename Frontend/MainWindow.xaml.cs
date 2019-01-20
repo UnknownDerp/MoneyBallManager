@@ -28,21 +28,19 @@ namespace Frontend
 
             InitializeComponent();
             
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
             //test.Close(TimeSpan.FromSeconds(3));
             SizeToContent = SizeToContent.WidthAndHeight;
-            this.MaxWidth = 1320;
-            this.MaxHeight = 768;
             this.ResizeMode = ResizeMode.CanMinimize;
         }
 
         private void MoveElements(double width, double height)
         {
             Clock.MoveClock(width);
-            PlayersAndMatchesControl.ListBoxResize(height);
-            ClubsTabControl.ListBoxResize(height);
+            //PlayersAndMatchesControl.ListBoxResize(height);
+            //ClubsTabControl.ListBoxResize(height);
         }
-        
+
         private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -50,7 +48,7 @@ namespace Frontend
 
         private void MainWindowChangedSize(object sender, SizeChangedEventArgs e)
         {
-            MoveElements(this.Width, this.Height);
+            //MoveElements(this.Width, this.Height);
         }
 
         protected override void OnStateChanged(EventArgs e)

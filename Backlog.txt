@@ -1,8 +1,13 @@
+DONE
 - Save club fom add player -> Done, but player list don't show clubname until restart
 - Set Default club from admin -> Done
 - Confirm Dialog for dangerous operations -> Done
+- Add Color constants -> Done
+- Match field -> Done
+
+BACKLOG
 - Update fields in other tabs when add/remove
 - Create Generic TabItem Component
 - Matches
-- Match field
-- Add Color constants
+- Player Placement on pitch
+- Fix Listbox Heights

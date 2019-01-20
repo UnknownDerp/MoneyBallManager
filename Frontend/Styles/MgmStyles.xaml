@@ -8,8 +8,8 @@
     </Style>
     
     <Style x:Key="TabStyle" TargetType="TabItem">
-        <Setter Property="Width" Value="150"/>
-        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="175"/>
+        <Setter Property="Height" Value="55"/>
         <Setter Property="Background" Value="{x:Static colorConstants:Colors.Background}"></Setter>
     </Style>
 

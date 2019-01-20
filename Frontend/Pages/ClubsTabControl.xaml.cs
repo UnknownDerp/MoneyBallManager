@@ -35,14 +35,14 @@ namespace Frontend.Pages
             DataContext = this;
         }
 
-        public void ListBoxResize(double height)
-        {
-            var newValue = height - 133;
-            if (newValue > 0)
-            {
-                ClubsListBox.Height = newValue;
-            }
-        }
+        //public void ListBoxResize(double height)
+        //{
+        //    var newValue = height - 133;
+        //    if (newValue > 0)
+        //    {
+        //        ClubsListBox.Height = newValue;
+        //    }
+        //}
 
         private void AddClubButtonClick(object sender, RoutedEventArgs e)
         {
