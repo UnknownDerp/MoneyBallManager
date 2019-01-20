@@ -4,15 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Frontend.Pages"
+             xmlns:colorConstants="clr-namespace:Frontend.Colors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="5">
-        <StackPanel HorizontalAlignment="Left">
+    <Grid Margin="5" Background="{x:Static colorConstants:Colors.Background}">
+        <StackPanel HorizontalAlignment="Right">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Style="{StaticResource TextBlockStyle}" Text="Default Club" Margin="0 0 5 0"/>
                 <ComboBox Name="ClubsComboBox" Width="150" Height="25" Margin="2,5,5,5" ItemsSource="{Binding Clubs}" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="SetDefaultClub_Event"/>
             </StackPanel>
-            <Button Width="100" Height="50" Content="Reset Database" Style="{StaticResource ButtonStyle}" Click="ResetDatabase_buttonClick"/>
+            <Button Width="150" Height="40" Content="Reset Database" Style="{StaticResource ButtonStyle}" Click="ResetDatabase_buttonClick" HorizontalAlignment="Right" Margin="0 0 5 0"/>
             
         </StackPanel>
     </Grid>

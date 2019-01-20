@@ -27,7 +27,7 @@ namespace Frontend.Pages
             SetTextAlignment();
             UpdateSize();
             VisibleHintText = VisibleHintText == null;
-            HintText.Visibility = VisibleHintText.Value ? Visibility.Visible : Visibility.Collapsed;
+            VisibleLabel = VisibleHintText.Value ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void SetTextAlignment()

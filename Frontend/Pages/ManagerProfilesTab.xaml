@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Frontend.Pages"
              mc:Ignorable="d" 
+             xmlns:colorConstants="clr-namespace:Frontend.Colors"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="#FFF0F0FF">
+    <Grid Background="{x:Static colorConstants:Colors.Background}">
         <StackPanel Name="CreateProfileView" Orientation="Vertical">
             <ListBox Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Name="ManagerProfilesListBox" Width="200" HorizontalAlignment="Left" MinHeight="642">
                 <ListBox.ItemTemplate>

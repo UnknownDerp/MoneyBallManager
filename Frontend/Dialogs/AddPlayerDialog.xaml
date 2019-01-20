@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:Frontend.Dialogs"
         xmlns:converters="clr-namespace:Frontend.Converters"
         xmlns:pages="clr-namespace:Frontend.Pages"
+        xmlns:colorConstants="clr-namespace:Frontend.Colors"
         mc:Ignorable="d"
         Title="Add Player" Height="165" Width="330" WindowStyle="ToolWindow" ResizeMode="NoResize" Icon="/Frontend;component/Icons/Win10Styles/icons8-jersey-32.png" WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <converters:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConvert"/>
     </Window.Resources>
-    <StackPanel Background="#FFF0F0FF" Orientation="Vertical">
+    <StackPanel Background="{x:Static colorConstants:Colors.Background}" Orientation="Vertical">
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
             <StackPanel Orientation="Vertical">
                 <pages:HintTextBox x:Name="NameTextBox" VisibleLabel="Collapsed" FieldName="Name"/>

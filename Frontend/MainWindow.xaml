@@ -6,6 +6,7 @@
         xmlns:frontend="clr-namespace:Frontend"
         xmlns:pages="clr-namespace:Frontend.Pages"
         xmlns:graphs="clr-namespace:Frontend.Graphs"
+        xmlns:colorConstants="clr-namespace:Frontend.Colors"
         mc:Ignorable="d"
         Title="Money Ball Manager" Height="1080" Width="1920" MinHeight="768" MinWidth="1320" Icon="Logos/logo.png"
         Style="{StaticResource WindowStyle}" WindowStartupLocation="CenterScreen"
@@ -17,7 +18,7 @@
         <Grid Height="50" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Stretch">
                 <Image Name="MbmIcon" Width="45" Height="45" HorizontalAlignment="Left" Source="Logos/logo.png"/>
-                <TextBlock Style="{StaticResource TextBlockStyle}" Foreground="#FFF0F0FF" Margin="5,0,0,0" Name="MbM" FontWeight="Bold" Text="MBM" FontSize="30"/>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Foreground="{x:Static colorConstants:Colors.Background}" Margin="5,0,0,0" Name="MbM" FontWeight="Bold" Text="MBM" FontSize="30"/>
                 <pages:Clock x:Name="Clock"></pages:Clock>
             </StackPanel>
         </Grid>

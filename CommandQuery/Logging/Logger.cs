@@ -19,7 +19,11 @@ namespace CommandQuery.Logging
                 Date = CreateDate(),
                 Severity = severity
             };
+#if DEBUG
+            Console.WriteLine(text);
+#else
             Add(logMessage);
+#endif
         }
 
         public static void Log(string text1, string text2, LogSeverity severity = LogSeverity.Info)

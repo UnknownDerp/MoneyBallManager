@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using CommandQuery.Logging;
 using Entities.Entities;
 using Entities.Interfaces;
 
@@ -51,6 +52,7 @@ namespace CommandQuery.DatabaseContext
         {
             _dbContext.Set<T>().Add(entity);
             _dbContext.SaveChanges();
+            Logger.Log($"{entity.GetType()}");
         }
 
         public void ResetDatabase()
