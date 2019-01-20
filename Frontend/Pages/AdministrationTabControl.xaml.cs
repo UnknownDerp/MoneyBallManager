@@ -45,7 +45,7 @@ namespace Frontend.Pages
             }
         }
 
-        private void SetDefaultClub_Click(object sender, RoutedEventArgs e)
+        private void SetDefaultClub_Event(object sender, RoutedEventArgs e)
         {
             var dbComm = new DatabaseCommunicator();
             var clubs = dbComm.GetAll<Club>();

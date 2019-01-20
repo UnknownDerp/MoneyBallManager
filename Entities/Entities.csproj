@@ -81,8 +81,10 @@
   <ItemGroup>
     <Compile Include="Entities\Club.cs" />
     <Compile Include="Entities\DatabaseMigrationScript.cs" />
+    <Compile Include="Entities\Log.cs" />
     <Compile Include="Entities\ManagerProfile.cs" />
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="Enums\LogSeverity.cs" />
     <Compile Include="Enums\PlayerRoleTypes.cs" />
     <Compile Include="Enums\PositionTypes.cs" />
     <Compile Include="Interfaces\SQLiteEntity.cs" />

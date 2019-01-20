@@ -259,6 +259,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CommandBindings\" />
+    <Folder Include="MatchPitch\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommandQuery\CommandQuery.csproj">
