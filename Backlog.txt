@@ -1,5 +1,6 @@
 - Save club fom add player -> Done, but player list don't show clubname until restart
 - Set Default club from admin -> Done
+- Confirm Dialog for dangerous operations -> Done
 - Update fields in other tabs when add/remove
 - Create Generic TabItem Component
 - Matches

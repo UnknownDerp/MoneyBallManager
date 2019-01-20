@@ -31,8 +31,9 @@ namespace Frontend
             Thread.Sleep(3000);
             //test.Close(TimeSpan.FromSeconds(3));
             SizeToContent = SizeToContent.WidthAndHeight;
-            this.Width = 1320;
-            this.Height = 768;
+            this.MaxWidth = 1320;
+            this.MaxHeight = 768;
+            this.ResizeMode = ResizeMode.CanMinimize;
         }
 
         private void MoveElements(double width, double height)
@@ -40,9 +41,6 @@ namespace Frontend
             Clock.MoveClock(width);
             PlayersAndMatchesControl.ListBoxResize(height);
             ClubsTabControl.ListBoxResize(height);
-#if DEBUG
-            Console.Out.WriteLine($"{width}x {height}y");
-#endif
         }
         
         private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)

@@ -7,10 +7,20 @@
         xmlns:converters="clr-namespace:Frontend.Converters"
         xmlns:pages="clr-namespace:Frontend.Pages"
         mc:Ignorable="d"
-        Title="Confirm" Height="165" Width="330" WindowStyle="ToolWindow" ResizeMode="NoResize" Icon="/Frontend;component/Icons/icons8-teams-50.png" WindowStartupLocation="CenterOwner">
-    <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-        <Button Width="75" Height="25" Content="OK" Margin="0,5,5,5" Click="ConfirmButtonClick"/>
-        <Button Width="75" Height="25" Content="Cancel" Margin="0,5,5,5" IsCancel="True"/>
-    </StackPanel>
+        Title="Confirm" Height="150" Width="300" WindowStyle="ToolWindow" ResizeMode="NoResize" Icon="/Frontend;component/Icons/icons8-teams-50.png" WindowStartupLocation="CenterOwner">
+    <Grid >
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+            <Image Name="IconField" Height="64" Width="64" Source="../Icons/Win10Styles/icons8-error-96 (1).png"/>
+            <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Are you sure?"/>
+            <TextBlock Text="This operation can't be undone"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Width="75" Height="25" Content="OK" Margin="0,5,5,5" Click="ConfirmButtonClick"/>
+            <Button Width="75" Height="25" Content="Cancel" Margin="0,5,5,5" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+    
             
 </Window>

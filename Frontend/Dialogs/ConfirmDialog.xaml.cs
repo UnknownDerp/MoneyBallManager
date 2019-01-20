@@ -26,7 +26,7 @@ namespace Frontend.Dialogs
 
         private void ConfirmButtonClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            DialogResult = true;
         }
     }
 }

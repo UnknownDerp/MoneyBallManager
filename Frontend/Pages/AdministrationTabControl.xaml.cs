@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CommandQuery.DatabaseContext;
 using Entities.Entities;
+using Frontend.Dialogs;
 
 namespace Frontend.Pages
 {
@@ -35,8 +36,13 @@ namespace Frontend.Pages
 
         private void ResetDatabase_buttonClick(object sender, RoutedEventArgs e)
         {
-            var dbCommun = new DatabaseCommunicator();
-            dbCommun.ResetDatabase();
+            var confirmDialog = new ConfirmDialog() { Owner = Window.GetWindow(this) };
+            confirmDialog.ShowDialog();
+            if (confirmDialog.DialogResult != null && confirmDialog.DialogResult == true)
+            {
+                var dbCommun = new DatabaseCommunicator();
+                dbCommun.ResetDatabase();
+            }
         }
 
         private void SetDefaultClub_Click(object sender, RoutedEventArgs e)

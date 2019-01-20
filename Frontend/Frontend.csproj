@@ -261,20 +261,6 @@
     <Folder Include="CommandBindings\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\icons8-align-justify-50.png" />
-    <Resource Include="Icons\icons8-combo-chart-50.png" />
-    <Resource Include="Icons\icons8-map-editing-50.png" />
-    <Resource Include="Icons\icons8-menu-50.png" />
-    <Resource Include="Icons\icons8-search-50.png" />
-    <Resource Include="Icons\icons8-settings-100.png" />
-    <Resource Include="Icons\icons8-settings-50.png" />
-    <Resource Include="Icons\icons8-soccer-ball-100.png" />
-    <Resource Include="Icons\icons8-soccer-ball-50.png" />
-    <Resource Include="Icons\icons8-stadium-100.png" />
-    <Resource Include="Icons\icons8-stadium-50.png" />
-    <Resource Include="Icons\icons8-teams-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CommandQuery\CommandQuery.csproj">
       <Project>{d749041c-44a2-4523-ab9d-548df352bdd1}</Project>
       <Name>CommandQuery</Name>
@@ -287,30 +273,6 @@
       <Project>{3d11e031-1043-45c0-92f7-d9e2eb0fbf88}</Project>
       <Name>MoneyBallManager</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\icons8-jersey-50.png" />
-    <Resource Include="Icons\icons8-player-change-50.png" />
-    <Resource Include="Icons\icons8-rubber-gloves-50.png" />
-    <Resource Include="Icons\icons8-shield-50.png" />
-    <Resource Include="Icons\icons8-shield-80.png" />
-    <Resource Include="Icons\icons8-soccer-goal-50.png" />
-    <Resource Include="Icons\icons8-strategy-100.png" />
-    <Resource Include="Icons\icons8-strategy-50.png" />
-    <Resource Include="Icons\icons8-sword-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\icons8-plus-32.png" />
-    <Resource Include="Icons\icons8-save-26.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\icons8-add-new-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\icons8-microsoft-excel-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\icons8-microsoft-excel-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Logos\logo.png" />
@@ -366,6 +328,12 @@
     <Resource Include="Icons\Win10Styles\Loading\load_5.png" />
     <Resource Include="Icons\Win10Styles\Loading\load_6.png" />
     <Resource Include="Icons\Win10Styles\Loading\load_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Win10Styles\icons8-jersey-32.png" />
+    <Resource Include="Icons\Win10Styles\icons8-maintenance-32.png" />
+    <Resource Include="Icons\Win10Styles\icons8-strategy-32.png" />
+    <Resource Include="Icons\Win10Styles\icons8-teams-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />

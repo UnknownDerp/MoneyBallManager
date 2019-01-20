@@ -15,7 +15,7 @@
     </Window.CommandBindings>
     <Grid Height="Auto" Width="Auto" Background="#FF1D2633">
         <Grid Height="50" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" Height="50">
+            <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Stretch">
                 <Image Name="MbmIcon" Width="45" Height="45" HorizontalAlignment="Left" Source="Logos/logo.png"/>
                 <TextBlock Style="{StaticResource TextBlockStyle}" Foreground="#FFF0F0FF" Margin="5,0,0,0" Name="MbM" FontWeight="Bold" Text="MBM" FontSize="30"/>
                 <pages:Clock x:Name="Clock"></pages:Clock>
@@ -26,7 +26,7 @@
                 <TabItem Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="ManagerIcon" Height="25" Width="25" Source="Icons/icons8-strategy-50.png"/>
+                            <Image Name="ManagerIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-strategy-32.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Manager Profiles" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
@@ -37,7 +37,7 @@
                 <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="PlayersIcon" Height="25" Width="25" Source="Icons/icons8-jersey-50.png"/>
+                            <Image Name="PlayersIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-jersey-32.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Players &amp; Matches" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
@@ -46,7 +46,7 @@
                 <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="ClubsIcon" Height="25" Width="25" Source="Icons/icons8-teams-50.png"/>
+                            <Image Name="ClubsIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-teams-32.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Clubs" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
@@ -55,7 +55,7 @@
                 <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="SettingsIcon" Height="25" Width="25" Source="Icons/icons8-settings-50.png"/>
+                            <Image Name="SettingsIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-maintenance-32.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Administration" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
