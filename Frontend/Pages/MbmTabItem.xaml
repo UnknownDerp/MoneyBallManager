@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:Frontend.Pages"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <TabItem>
         <TabItem VerticalAlignment="Stretch" Style="{StaticResource TabStyle}">
             <TabItem.Header>
                 <StackPanel Orientation="Horizontal">
