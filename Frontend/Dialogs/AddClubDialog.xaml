@@ -8,7 +8,7 @@
         xmlns:pages="clr-namespace:Frontend.Pages"
         xmlns:colorConstants="clr-namespace:Frontend.Colors"
         mc:Ignorable="d"
-        Title="Add Club" Height="195" Width="220" WindowStyle="ToolWindow" ResizeMode="NoResize" Icon="/Frontend;component/Icons/Win10Styles/icons8-teams-32.png" WindowStartupLocation="CenterOwner">
+        Title="Add Club" Height="195" Width="220" WindowStyle="ToolWindow" ResizeMode="NoResize" Icon="/Icons/Win10Styles/icons8-teams-32.png" WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <converters:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConvert"/>
     </Window.Resources>

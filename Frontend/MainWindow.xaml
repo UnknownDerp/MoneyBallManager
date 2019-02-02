@@ -7,6 +7,7 @@
         xmlns:pages="clr-namespace:Frontend.Pages"
         xmlns:graphs="clr-namespace:Frontend.Graphs"
         xmlns:colorConstants="clr-namespace:Frontend.Colors"
+        xmlns:matchPitch="clr-namespace:Frontend.MatchPitch"
         mc:Ignorable="d"
         Title="Money Ball Manager" Height="1080" Width="1920" Icon="Logos/logo.png"
         Style="{StaticResource WindowStyle}" WindowStartupLocation="CenterScreen"
@@ -60,8 +61,16 @@
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Administration" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <!--<pages:AdministrationTabControl />-->
-                    <pages:Pitch />
+                    <pages:AdministrationTabControl />
+                </TabItem>
+                <TabItem Style="{StaticResource TabStyle}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Name="TestIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-plot-64.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Pitch Testing" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <matchPitch:PlayerGrid/>
                 </TabItem>
             </TabControl>
         </Grid>

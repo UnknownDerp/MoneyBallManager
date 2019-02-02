@@ -7,7 +7,7 @@
         xmlns:converters="clr-namespace:Frontend.Converters"
         xmlns:pages="clr-namespace:Frontend.Pages"
         mc:Ignorable="d"
-        Title="Confirm" Height="150" Width="300" WindowStyle="ToolWindow" ResizeMode="NoResize" Icon="/Frontend;component/Icons/icons8-teams-50.png" WindowStartupLocation="CenterOwner">
+        Title="Confirm" Height="150" Width="300" WindowStyle="ToolWindow" ResizeMode="NoResize" Icon="/Icons/Win10Styles/icons8-error-64.png" WindowStartupLocation="CenterOwner">
     <Grid >
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
             <Image Name="IconField" Height="64" Width="64" Source="../Icons/Win10Styles/icons8-error-96 (1).png"/>

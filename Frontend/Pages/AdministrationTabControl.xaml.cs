@@ -31,6 +31,8 @@ namespace Frontend.Pages
             Clubs = communicator.GetAll<Club>();
             ClubsComboBox.SelectedValue = communicator.Get<Club>(x => x.IsDefault).Id;
             DataContext = this;
+
+            
         }
 
 

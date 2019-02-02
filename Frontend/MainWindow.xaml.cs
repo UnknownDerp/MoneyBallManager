@@ -48,7 +48,7 @@ namespace Frontend
 
         private void MainWindowChangedSize(object sender, SizeChangedEventArgs e)
         {
-            //MoveElements(this.Width, this.Height);
+            MoveElements(this.Width, this.Height);
         }
 
         protected override void OnStateChanged(EventArgs e)

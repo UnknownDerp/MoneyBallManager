@@ -6,7 +6,7 @@
         <Setter Property="Background" Value="{x:Static colorConstants:Colors.Background}">
         </Setter>
     </Style>
-    
+
     <Style x:Key="TabStyle" TargetType="TabItem">
         <Setter Property="Width" Value="175"/>
         <Setter Property="Height" Value="55"/>
@@ -48,7 +48,7 @@
                         Name="Border"
                         Padding="15,0,0,0"
                         SnapsToDevicePixels="true" VerticalAlignment="Stretch">
-                        
+
                         <ContentPresenter />
                     </Border>
                     <ControlTemplate.Triggers>
