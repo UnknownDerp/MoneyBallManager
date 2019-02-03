@@ -4,10 +4,12 @@ DONE
 - Confirm Dialog for dangerous operations -> Done
 - Add Color constants -> Done
 - Match field -> Done
+- Player Placement on pitch 
 
 BACKLOG
 - Update fields in other tabs when add/remove
 - Create Generic TabItem Component
 - Matches
-- Player Placement on pitch
 - Fix Listbox Heights
+- Window resized when minimize and open again
+- Create and save tactics

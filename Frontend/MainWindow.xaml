@@ -15,16 +15,18 @@
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close" Executed="CloseCommandHandler"/>
     </Window.CommandBindings>
-    <Grid Background="#FF1D2633">
+    <Grid Background="{x:Static colorConstants:ColorConstants.DarkBackground}">
         <Grid Height="50" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Stretch">
                 <Image Name="MbmIcon" Width="45" Height="45" HorizontalAlignment="Left" Source="Logos/logo.png"/>
-                <TextBlock Style="{StaticResource TextBlockStyle}" Foreground="{x:Static colorConstants:Colors.Background}" Margin="5,0,0,0" Name="MbM" FontWeight="Bold" Text="MBM" FontSize="30"/>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Foreground="{x:Static colorConstants:ColorConstants.Background}" Margin="5,0,0,0" Name="MbM" FontWeight="Bold" Text="MBM" FontSize="30"/>
                 <pages:Clock x:Name="Clock"></pages:Clock>
             </StackPanel>
         </Grid>
         <Grid>
-            <TabControl x:Name="MainTabs" TabStripPlacement="Left" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Margin="0,50,0,0" SelectionChanged="MainTabs_OnSelectionChanged">
+            <TabControl x:Name="MainTabs" TabStripPlacement="Left" HorizontalAlignment="Stretch" 
+                        HorizontalContentAlignment="Left" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Margin="0,50,0,0" SelectionChanged="MainTabs_OnSelectionChanged"
+                        Background="{x:Static colorConstants:ColorConstants.Background}">
                 <TabItem Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
@@ -57,6 +59,17 @@
                 <TabItem Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
+                            <Image Name="TestIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-player-change-64.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Tactics" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid HorizontalAlignment="Center">
+                        <matchPitch:PlayerGrid/>
+                    </Grid>
+                </TabItem>
+                <TabItem Style="{StaticResource TabStyle}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
                             <Image Name="SettingsIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-maintenance-32.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Administration" Margin="5,0,0,0"/>
                         </StackPanel>
@@ -66,11 +79,10 @@
                 <TabItem Style="{StaticResource TabStyle}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="TestIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-plot-64.png"/>
-                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Pitch Testing" Margin="5,0,0,0"/>
+                            <Image Name="Testing" Height="32" Width="32" Source="Icons/Win10Styles/icons8-plot-64.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Testing Tab" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <matchPitch:PlayerGrid/>
                 </TabItem>
             </TabControl>
         </Grid>

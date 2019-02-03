@@ -12,7 +12,7 @@
     <Window.Resources>
         <converters:TextInputToVisibilityConverter x:Key="TextInputToVisibilityConvert"/>
     </Window.Resources>
-    <StackPanel Background="{x:Static colorConstants:Colors.Background}" Orientation="Vertical">
+    <StackPanel Background="{x:Static colorConstants:ColorConstants.Background}" Orientation="Vertical">
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
             <StackPanel Orientation="Vertical"  Margin="0,5,0,0">
                 <pages:HintTextBox x:Name="NameTextBox" VisibleLabel="Collapsed" FieldName="Name" Size="Large"/>
@@ -33,8 +33,8 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Width="75" Height="25" Content="Add" Margin="0,5,5,5" Click="AddClubClick"/>
-            <Button Width="75" Height="25" Content="Cancel" Margin="0,5,5,5" IsCancel="True"/>
+            <Button Width="75" Height="25" Content="Add" Margin="0,5,5,5" Click="AddClubClick" Style="{StaticResource ButtonStyle}"/>
+            <Button Width="75" Height="25" Content="Cancel" Margin="0,5,5,5" IsCancel="True" Style="{StaticResource ButtonStyle}"/>
         </StackPanel>
     </StackPanel>
 </Window>

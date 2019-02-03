@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Entities.Entities;
+using Frontend.Colors;
 
 namespace Frontend.Dialogs
 {
@@ -47,7 +48,7 @@ namespace Frontend.Dialogs
         {
             if (NameTextBox.IsNullOrEmpty())
             {
-                NameTextBox.HintText.Foreground = Brushes.Red;
+                NameTextBox.HintText.Foreground = ColorConstants.WarningRed;
                 return false;
             }
             return true;

@@ -9,8 +9,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-            <TextBlock Style="{StaticResource TextBlockStyle}" Padding="0,0,5,0" Foreground="{x:Static colorConstants:Colors.Background}" Text="TempClock" FontWeight="Bold" FontSize="14" Name="DateText"/>
-            <TextBlock Style="{StaticResource TextBlockStyle}" Padding="0,0,5,0" Foreground="{x:Static colorConstants:Colors.Background}" Text="TempClock" FontWeight="Bold" FontSize="20" Name="TimeText"/>    
+            <TextBlock Style="{StaticResource TextBlockStyle}" Padding="0,0,5,0" Foreground="{x:Static colorConstants:ColorConstants.Background}" Text="TempClock" FontWeight="Bold" FontSize="14" Name="DateText"/>
+            <TextBlock Style="{StaticResource TextBlockStyle}" Padding="0,0,5,0" Foreground="{x:Static colorConstants:ColorConstants.Background}" Text="TempClock" FontWeight="Bold" FontSize="20" Name="TimeText"/>    
         </StackPanel>
     </Grid>
 </UserControl>

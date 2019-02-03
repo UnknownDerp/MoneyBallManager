@@ -41,7 +41,7 @@
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Defender" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <Grid Background="{x:Static colorConstants:Colors.Background}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
+                    <Grid Background="{x:Static colorConstants:ColorConstants.Background}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
                     </Grid>
                 </TabItem>
                 <TabItem Style="{StaticResource TabStyleSmall}">
@@ -51,7 +51,7 @@
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Midfielder" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <Grid Background="{x:Static colorConstants:Colors.Background}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
+                    <Grid Background="{x:Static colorConstants:ColorConstants.Background}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
                     </Grid>
                 </TabItem>
                 <TabItem Style="{StaticResource TabStyleSmall}">
@@ -61,7 +61,7 @@
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Forward" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <Grid Background="{x:Static colorConstants:Colors.Background}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
+                    <Grid Background="{x:Static colorConstants:ColorConstants.Background}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto">
                     </Grid>
                 </TabItem>
             </TabControl>

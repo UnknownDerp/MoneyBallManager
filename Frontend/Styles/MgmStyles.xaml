@@ -3,20 +3,20 @@
                     xmlns:colorConstants="clr-namespace:Frontend.Colors">
     <Style x:Key="WindowStyle" TargetType="Window">
         <!--<Setter Property="Background" Value="#2D2D30">-->
-        <Setter Property="Background" Value="{x:Static colorConstants:Colors.Background}">
+        <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}">
         </Setter>
     </Style>
 
     <Style x:Key="TabStyle" TargetType="TabItem">
         <Setter Property="Width" Value="175"/>
         <Setter Property="Height" Value="55"/>
-        <Setter Property="Background" Value="{x:Static colorConstants:Colors.Background}"></Setter>
+        <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}"></Setter>
     </Style>
 
     <Style x:Key="TabStyleSmall" TargetType="TabItem">
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="35"/>
-        <Setter Property="Background" Value="{x:Static colorConstants:Colors.Background}"></Setter>
+        <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}"></Setter>
     </Style>
 
     <Style x:Key="TextBlockStyle" TargetType="TextBlock">
@@ -27,18 +27,57 @@
     <Style x:Key="ButtonStyle" TargetType="Button">
         <Setter Property="FontFamily" Value="Courier Calibri"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{x:Static colorConstants:ColorConstants.DarkBackground}" BorderThickness="1, 1, 2, 2">
+                        <Grid>
+                            <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="true">
+                            <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}" />
+                            <Setter Property="Foreground" Value="{x:Static colorConstants:ColorConstants.Black}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.MouseOverGray}" />
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.DarkBackground}" />
+                            <Setter Property="Foreground" Value="{x:Static colorConstants:ColorConstants.White}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.DarkBackground}" />
+                            <Setter Property="Foreground" Value="{x:Static colorConstants:ColorConstants.White}" />
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonStyleInactive" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=ManagerProfilesListBox, Path=SelectedIndex}" Value="-1">
+                <Setter Property="Button.IsEnabled" Value="False"/>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="ListBoxStyle" TargetType="ListBox">
-        <Setter Property="Background" Value="{x:Static colorConstants:Colors.Background}"/>
-        <Setter Property="Width" Value="200"></Setter>
+        <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}"/>
+        <Setter Property="Width" Value="200"/>
     </Style>
 
     <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
         <Setter Property="Height" Value="40"/>
         <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="Background" Value="{x:Static colorConstants:Colors.Background}"/>
-        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontFamily" Value="Courier Calibri"/>
 
         <Setter Property="Template">
@@ -54,10 +93,10 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="true">
                             <Setter TargetName="Border" Property="Background"
-                                    Value="#FF1D2633"/>
+                                    Value="{x:Static colorConstants:ColorConstants.DarkBackground}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="Border" Property="Background" Value="#FFD0D0DF"/>
+                            <Setter TargetName="Border" Property="Background" Value="{x:Static colorConstants:ColorConstants.MouseOverGray}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -65,7 +104,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Foreground" Value="{x:Static colorConstants:Colors.Background}"/>
+                <Setter Property="Foreground" Value="{x:Static colorConstants:ColorConstants.Background}"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Foreground" Value="Black"/>

@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Forms;
-using Control = System.Windows.Forms.Control;
-using MouseEventArgs = System.Windows.Input.MouseEventArgs;
+using Frontend.Colors;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace Frontend.Pages
@@ -35,7 +23,7 @@ namespace Frontend.Pages
         public Pitch()
         {
             InitializeComponent();
-            _height = 950.0;
+            _height = 700.0;
             _width = _height * 0.66;
             _elements = new List<UIElement>();
 
@@ -49,12 +37,10 @@ namespace Frontend.Pages
             RenderElements();
         }
 
-        public void Render(IEnumerable<IEnumerable<UIElement>> items)
+        public void Render(IEnumerable<UIElement> items)
         {
-            foreach (var item in items)
-            {
-                AddElementsToCanvas(item);
-            }
+
+            AddElementsToCanvas(items);
             ClearCanvas();
             RenderElements();
         }
@@ -90,12 +76,12 @@ namespace Frontend.Pages
             const int darkPieces = 20;
             var darkMargin = _height / darkPieces;
 
-            _elements.Add(new Rectangle() { Height = _height, Width = _width, Fill = Brushes.ForestGreen });
+            _elements.Add(new Rectangle() { Height = _height, Width = _width, Fill = ColorConstants.Green1 });
             for (var i = 0; i < darkPieces; i++)
             {
                 if (i % 2 == 0)
                 {
-                    _elements.Add(new Rectangle() { Height = darkMargin, Width = _width, Fill = Brushes.DarkGreen, Margin = new Thickness(0, darkMargin * i, 0, 0) });
+                    _elements.Add(new Rectangle() { Height = darkMargin, Width = _width, Fill = ColorConstants.Green2, Margin = new Thickness(0, darkMargin * i, 0, 0) });
                 }
             }
         }
@@ -112,17 +98,33 @@ namespace Frontend.Pages
             var penaltySpot = PitchHeight * 0.09;
             var goalLineBoxWidth = penaltyAreaWidth * 0.4;
             var goalLineBoxHeight = penaltyAreaHeight / 3;
+            var color = ColorConstants.White;
+            var lineThickness = _height <= 500 ? 1 : 2;
 
-            _elements.Add(new Rectangle() { Height = PitchHeight, Width = PitchWidth, StrokeThickness = 2, Stroke = Brushes.White, Margin = new Thickness(PitchSideMargin, PitchTopMargin, 0, 0) });
-            _elements.Add(new Line() { X1 = PitchSideMargin, X2 = PitchWidth + PitchSideMargin, Y1 = _height / 2, Y2 = _height / 2, StrokeThickness = 2, Stroke = Brushes.White });
-            _elements.Add(new Ellipse() { Height = circleDiameter, Width = circleDiameter, StrokeThickness = 2, Stroke = Brushes.White, Margin = new Thickness(_width / 2 - circleDiameter / 2, _height / 2 - circleDiameter / 2, 0, 0) });
-            _elements.Add(new Ellipse() { Height = 5, Width = 5, StrokeThickness = 2, Fill = Brushes.White, Stroke = Brushes.White, Margin = new Thickness(_width / 2 - 5.0 / 2, _height / 2 - 5.0 / 2, 0, 0) });
-            _elements.Add(new Ellipse() { Height = 5, Width = 5, StrokeThickness = 2, Fill = Brushes.White, Stroke = Brushes.White, Margin = new Thickness(_width / 2 - 5.0 / 2, PitchTopMargin + penaltySpot, 0, 0) });
-            _elements.Add(new Ellipse() { Height = 5, Width = 5, StrokeThickness = 2, Fill = Brushes.White, Stroke = Brushes.White, Margin = new Thickness(_width / 2 - 5.0 / 2, _height - PitchTopMargin - penaltySpot, 0, 0) });
-            _elements.Add(new Rectangle() { Height = penaltyAreaHeight, Width = penaltyAreaWidth, StrokeThickness = 2, Stroke = Brushes.White, Margin = new Thickness(_width * 0.25 + PitchSideMargin / 2, PitchTopMargin, 0, 0) });
-            _elements.Add(new Rectangle() { Height = penaltyAreaHeight, Width = penaltyAreaWidth, StrokeThickness = 2, Stroke = Brushes.White, Margin = new Thickness(_width * 0.25 + PitchSideMargin / 2, _height - penaltyAreaHeight - PitchTopMargin, 0, 0) });
-            _elements.Add(new Rectangle() { Height = goalLineBoxHeight, Width = goalLineBoxWidth, StrokeThickness = 2, Stroke = Brushes.White, Margin = new Thickness(_width / 2 - goalLineBoxWidth / 2, PitchTopMargin, 0, 0) });
-            _elements.Add(new Rectangle() { Height = goalLineBoxHeight, Width = goalLineBoxWidth, StrokeThickness = 2, Stroke = Brushes.White, Margin = new Thickness(_width / 2 - goalLineBoxWidth / 2, _height - goalLineBoxHeight - PitchTopMargin, 0, 0) });
+            _elements.Add(new Rectangle() { Height = PitchHeight, Width = PitchWidth, StrokeThickness = lineThickness, Stroke = color, Margin = new Thickness(PitchSideMargin, PitchTopMargin, 0, 0) });
+            _elements.Add(new Line() { X1 = PitchSideMargin, X2 = PitchWidth + PitchSideMargin, Y1 = _height / 2, Y2 = _height / 2, StrokeThickness = lineThickness, Stroke = color });
+            _elements.Add(new Ellipse() { Height = circleDiameter, Width = circleDiameter, StrokeThickness = lineThickness, Stroke = color, Margin = new Thickness(_width / 2 - circleDiameter / 2, _height / 2 - circleDiameter / 2, 0, 0) });
+            _elements.Add(new Ellipse() { Height = 5, Width = 5, StrokeThickness = lineThickness, Fill = color, Stroke = color, Margin = new Thickness(_width / 2 - 5.0 / 2, _height / 2 - 5.0 / 2, 0, 0) });
+            _elements.Add(new Ellipse() { Height = 5, Width = 5, StrokeThickness = lineThickness, Fill = color, Stroke = color, Margin = new Thickness(_width / 2 - 5.0 / 2, PitchTopMargin + penaltySpot, 0, 0) });
+            _elements.Add(new Ellipse() { Height = 5, Width = 5, StrokeThickness = lineThickness, Fill = color, Stroke = color, Margin = new Thickness(_width / 2 - 5.0 / 2, _height - PitchTopMargin - penaltySpot, 0, 0) });
+            _elements.Add(new Rectangle() { Height = penaltyAreaHeight, Width = penaltyAreaWidth, StrokeThickness = lineThickness, Stroke = color, Margin = new Thickness(_width * 0.25 + PitchSideMargin / 2, PitchTopMargin, 0, 0) });
+            _elements.Add(new Rectangle() { Height = penaltyAreaHeight, Width = penaltyAreaWidth, StrokeThickness = lineThickness, Stroke = color, Margin = new Thickness(_width * 0.25 + PitchSideMargin / 2, _height - penaltyAreaHeight - PitchTopMargin, 0, 0) });
+            _elements.Add(new Rectangle() { Height = goalLineBoxHeight, Width = goalLineBoxWidth, StrokeThickness = lineThickness, Stroke = color, Margin = new Thickness(_width / 2 - goalLineBoxWidth / 2, PitchTopMargin, 0, 0) });
+            _elements.Add(new Rectangle() { Height = goalLineBoxHeight, Width = goalLineBoxWidth, StrokeThickness = lineThickness, Stroke = color, Margin = new Thickness(_width / 2 - goalLineBoxWidth / 2, _height - goalLineBoxHeight - PitchTopMargin, 0, 0) });
+            _elements.Add(CreateArc(goalLineBoxWidth, penaltyAreaHeight + PitchTopMargin, goalLineBoxWidth, color, lineThickness, SweepDirection.Counterclockwise));
+            _elements.Add(CreateArc(goalLineBoxWidth, _height - penaltyAreaHeight - PitchTopMargin, goalLineBoxWidth, color, lineThickness, SweepDirection.Clockwise));
+
+        }
+
+        private Path CreateArc(double width, double height, double boxWidth, Brush color, int lineThickness, SweepDirection direction)
+        {
+            var streamGeometry = new StreamGeometry();
+            using (var gc = streamGeometry.Open())
+            {
+                gc.BeginFigure(new Point(_width / 2 - width / 2, height), false, false);
+                gc.ArcTo(new Point(_width / 2 - width / 2 + boxWidth, height), new Size(100, 100), 0, false, direction, true, false);
+            }
+            return new Path() { Stroke = color, StrokeThickness = lineThickness, Data = streamGeometry };
         }
     }
 }

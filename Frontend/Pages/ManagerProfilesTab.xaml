@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              xmlns:colorConstants="clr-namespace:Frontend.Colors"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="{x:Static colorConstants:Colors.Background}">
+    <Grid Background="{x:Static colorConstants:ColorConstants.Background}">
         <StackPanel Name="CreateProfileView" Orientation="Vertical">
             <ListBox Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Name="ManagerProfilesListBox" Width="200" HorizontalAlignment="Left" MinHeight="642">
                 <ListBox.ItemTemplate>
@@ -20,18 +20,8 @@
                 </ListBox.ItemTemplate>
             </ListBox>
             <StackPanel Orientation="Horizontal">
-                <Button Content="Create Profile" Width="98" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,5,0,0" Click="CreateNewManagerProfileClick"/>
-                <Button Content="Edit Profile" Width="98" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,5,0,0" Click="EditManagerProfileClick">
-                    <Button.Style>
-                        <Style>
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding ElementName=ManagerProfilesListBox, Path=SelectedIndex}" Value="-1">
-                                    <Setter Property="Button.IsEnabled" Value="False"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                <Button Content="Create Profile" Width="98" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,5,0,0" Click="CreateNewManagerProfileClick" Style="{StaticResource ButtonStyle}"/>
+                <Button Content="Edit Profile" Width="98" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,5,0,0" Click="EditManagerProfileClick" Style="{StaticResource ButtonStyleInactive}"/>
             </StackPanel>
         </StackPanel>
         <WrapPanel Name="ManagerProfileTabControl"></WrapPanel>

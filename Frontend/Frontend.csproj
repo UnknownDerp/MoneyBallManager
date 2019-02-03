@@ -113,7 +113,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Colors\Colors.cs" />
+    <Compile Include="Colors\ColorConstants.cs" />
     <Compile Include="Dialogs\AddClubDialog.xaml.cs">
       <DependentUpon>AddClubDialog.xaml</DependentUpon>
     </Compile>

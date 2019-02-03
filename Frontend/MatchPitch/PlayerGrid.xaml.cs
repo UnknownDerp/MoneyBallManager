@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Frontend.Pages;
 
 namespace Frontend.MatchPitch
 {
@@ -20,22 +21,21 @@ namespace Frontend.MatchPitch
     /// </summary>
     public partial class PlayerGrid : UserControl
     {
-        private readonly List<Line> _horizontalLines;
-        private readonly List<Line> _verticaLines;
+        private readonly List<HorizontalLine> _horizontalLines;
+        private readonly List<VerticalLine> _verticaLines;
         private readonly List<PlayerCircle> _playerCircles;
         public PlayerGrid()
         {
             InitializeComponent();
-            _horizontalLines = new List<Line>();
-            _verticaLines = new List<Line>();
+            _horizontalLines = new List<HorizontalLine>();
+            _verticaLines = new List<VerticalLine>();
             _playerCircles = new List<PlayerCircle>();
 
             InitializeVerticalLines();
             InitializeHorizontalLines();
             InitializePlayerCircles();
-            //Pitch.AddElementToCanvas(new PlayerCircle().GetPlayerCircle(new Thickness(0)));
-            //Pitch.AddElementToCanvas(new PlayerCircle().GetPlayerCircle(new Thickness(100)));
-            Pitch.Render(new[] { _horizontalLines, _verticaLines });
+            var circles = _playerCircles.Select(x => x.GetPlayerCircle()).ToList();
+            Pitch.Render(circles);
         }
 
         private void InitializePlayerCircles()
@@ -45,7 +45,10 @@ namespace Frontend.MatchPitch
                 foreach (var horizontalLine in _horizontalLines)
                 {
                     var intersection = GetIntersection(horizontalLine, verticaLine);
-
+                    if (ShouldAddPlayerCircle(horizontalLine.PlayerPosition, verticaLine.PitchPosition))
+                    {
+                        _playerCircles.Add(new PlayerCircle(intersection, horizontalLine.PlayerPosition, verticaLine.PitchPosition, Pitch.PitchHeight));
+                    }
                 }
             }
         }
@@ -54,59 +57,140 @@ namespace Frontend.MatchPitch
         {
             var smallWidth = Pitch.PitchWidth / 5;
             var bigWidth = Pitch.PitchWidth - (smallWidth * 2);
-            var height = Pitch.PitchHeight + Pitch.PitchTopMargin;
 
-            _verticaLines.Add(new Line()
+            _verticaLines.Add(new VerticalLine()
             {
-                Y1 = Pitch.PitchTopMargin,
-                Y2 = height,
-                X1 = smallWidth / 2 + Pitch.PitchSideMargin,
-                X2 = smallWidth / 2 + Pitch.PitchSideMargin,
-                StrokeThickness = 2,
-                Stroke = Brushes.Magenta
+                X = smallWidth / 2 + Pitch.PitchSideMargin,
+                PitchPosition = PitchPositionLine.LeftWing
             });
 
-            var middleMargin = bigWidth / 3;
-            for (var i = 0; i < 3; i++)
+            var numOfCentralLines = 5;
+            var middleMargin = bigWidth / numOfCentralLines;
+            for (var i = 0; i < numOfCentralLines; i++)
             {
-                var x = bigWidth / 2 + Pitch.PitchSideMargin + (middleMargin * i);
-                _verticaLines.Add(new Line()
+                var x = bigWidth / 2 + (middleMargin * i);
+                PitchPositionLine line;
+                if (i < 2)
                 {
-                    Y1 = Pitch.PitchTopMargin,
-                    Y2 = height,
-                    X1 = x,
-                    X2 = x,
-                    StrokeThickness = 2,
-                    Stroke = Brushes.Magenta
+                    line = PitchPositionLine.LeftCentral;
+                }
+                else if (i > 2)
+                {
+                    line = PitchPositionLine.RightCentral;
+                }
+                else
+                {
+                    line = PitchPositionLine.Central;
+                }
+                _verticaLines.Add(new VerticalLine()
+                {
+                    X = x,
+                    PitchPosition = line
                 });
             }
 
-            _verticaLines.Add(new Line()
+            _verticaLines.Add(new VerticalLine()
             {
-                Y1 = Pitch.PitchTopMargin,
-                Y2 = height,
-                X1 = Pitch.PitchWidth - smallWidth / 2 + Pitch.PitchSideMargin,
-                X2 = Pitch.PitchWidth - smallWidth / 2 + Pitch.PitchSideMargin,
-                StrokeThickness = 2,
-                Stroke = Brushes.Magenta
+                X = Pitch.PitchWidth - smallWidth / 2 + Pitch.PitchSideMargin,
+                PitchPosition = PitchPositionLine.RightWing
             });
 
         }
 
         private void InitializeHorizontalLines()
         {
-            var x1 = Pitch.PitchSideMargin;
-            var x2 = Pitch.PitchWidth + Pitch.PitchSideMargin;
-            var startingHeight = (Pitch.PitchHeight - Pitch.PitchTopMargin * 1.5) / 6;
             for (var i = 7; i > 0; i--)
             {
-                _horizontalLines.Add(new Line() { X1 = x1, X2 = x2, Y1 = startingHeight * i, Y2 = startingHeight * i, StrokeThickness = 2, Stroke = Brushes.Magenta });
+                var playerPosition = (PlayerPositionLine)i;
+                _horizontalLines.Add(new HorizontalLine()
+                {
+                    Y = GetPositionLineHeight(playerPosition),
+                    PlayerPosition = playerPosition
+
+                });
             }
         }
 
-        private Point GetIntersection(Line horizontal, Line vertical)
+        private double GetPositionLineHeight(PlayerPositionLine position)
         {
-            return new Point(vertical.X1, horizontal.Y1);
+            var bottomLine = Pitch.PitchHeight + Pitch.PitchTopMargin;
+            switch (position)
+            {
+                case PlayerPositionLine.Goalkeeper:
+                    return bottomLine * 0.97;
+                case PlayerPositionLine.Libro:
+                    return bottomLine * 0.88;
+                case PlayerPositionLine.Defender:
+                    return bottomLine * 0.78;
+                case PlayerPositionLine.DefensiveMidfielder:
+                    return bottomLine * 0.65;
+                case PlayerPositionLine.Midfielder:
+                    return bottomLine * 0.5;
+                case PlayerPositionLine.OffensiveMidfielder:
+                    return bottomLine * 0.35;
+                case PlayerPositionLine.Forward:
+                    return bottomLine * 0.15;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(position), position, null);
+            }
         }
+
+        private static bool ShouldAddPlayerCircle(PlayerPositionLine playerPosition, PitchPositionLine pitchPosition)
+        {
+            switch (playerPosition)
+            {
+                case PlayerPositionLine.Goalkeeper:
+                case PlayerPositionLine.Libro:
+                    return pitchPosition == PitchPositionLine.Central;
+                case PlayerPositionLine.Forward:
+                    return pitchPosition == PitchPositionLine.Central ||
+                           pitchPosition == PitchPositionLine.LeftCentral ||
+                           pitchPosition == PitchPositionLine.RightCentral;
+            }
+            return true;
+        }
+
+        private static Point GetIntersection(HorizontalLine horizontal, VerticalLine vertical)
+        {
+            return new Point(vertical.X, horizontal.Y);
+        }
+    }
+
+    public enum PlayerPositionLine
+    {
+        Goalkeeper = 7,
+        Libro = 6,
+        Defender = 5,
+        DefensiveMidfielder = 4,
+        Midfielder = 3,
+        OffensiveMidfielder = 2,
+        Forward = 1
+    }
+
+    public enum PitchPositionLine
+    {
+        LeftWing = 0,
+        LeftCentral = 1,
+        Central = 2,
+        RightCentral = 3,
+        RightWing = 4,
+    }
+
+    public class HorizontalLine
+    {
+        public double Y { get; set; }
+        public PlayerPositionLine PlayerPosition { get; set; }
+    }
+
+    public class VerticalLine
+    {
+        public double X { get; set; }
+        public PitchPositionLine PitchPosition { get; set; }
+    }
+
+    public class Position
+    {
+        public PitchPositionLine PitchPosition { get; set; }
+        public PlayerPositionLine PlayerPosition { get; set; }
     }
 }

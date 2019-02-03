@@ -6,6 +6,7 @@ using System.Windows.Media;
 using CommandQuery.DatabaseContext;
 using Entities.Entities;
 using Entities.Enums;
+using Frontend.Colors;
 
 namespace Frontend.Dialogs
 {
@@ -14,13 +15,13 @@ namespace Frontend.Dialogs
     /// </summary>
     public partial class AddPlayerDialog : Window
     {
-        public List<Club> Clubs { get;}
+        public List<Club> Clubs { get; }
 
         public Player Player
         {
             get
             {
-                var club = new DatabaseCommunicator().Get<Club>(x => x.Id == (int) ClubsComboBox.SelectedValue);
+                var club = new DatabaseCommunicator().Get<Club>(x => x.Id == (int)ClubsComboBox.SelectedValue);
                 return new Player()
                 {
                     Name = NameTextBox.ComponentText,
@@ -55,17 +56,17 @@ namespace Frontend.Dialogs
             var valid = true;
             if (NameTextBox.IsNullOrEmpty())
             {
-                NameTextBox.HintText.Foreground = Brushes.Red;
+                NameTextBox.HintText.Foreground = ColorConstants.WarningRed;
                 valid = false;
             }
             if (HeightTextBox.IsNullOrEmpty())
             {
-                HeightTextBox.HintText.Foreground = Brushes.Red;
+                HeightTextBox.HintText.Foreground = ColorConstants.WarningRed;
                 valid = false;
             }
             if (WeightTextBox.IsNullOrEmpty())
             {
-                WeightTextBox.HintText.Foreground = Brushes.Red;
+                WeightTextBox.HintText.Foreground = ColorConstants.WarningRed;
                 valid = false;
             }
             if (PositionComboBox.SelectedItem == null || RoleComboBox.SelectedItem == null)
