@@ -13,3 +13,6 @@ BACKLOG
 - Fix Listbox Heights
 - Window resized when minimize and open again
 - Create and save tactics
+
+LOW PRIORITIZED THINGS
+- Problem reporting (Email)

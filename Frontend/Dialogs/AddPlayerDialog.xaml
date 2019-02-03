@@ -27,8 +27,8 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Width="75" Height="25" Content="Add" Margin="0,5,5,5" Click="AddPlayerClick" Style="{StaticResource ButtonStyle}"/>
-            <Button Width="75" Height="25" Content="Cancel" Margin="0,5,5,5" IsCancel="True" Style="{StaticResource ButtonStyle}"/>
+            <Button Content="Add" Margin="0,5,5,5" Click="AddPlayerClick" Style="{StaticResource ButtonStyle}"/>
+            <Button Content="Cancel" Margin="0,5,5,5" IsCancel="True" Style="{StaticResource ButtonStyle}"/>
         </StackPanel>
     </StackPanel>
 </Window>

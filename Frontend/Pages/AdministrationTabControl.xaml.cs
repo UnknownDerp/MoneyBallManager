@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,7 +33,7 @@ namespace Frontend.Pages
             ClubsComboBox.SelectedValue = communicator.Get<Club>(x => x.IsDefault).Id;
             DataContext = this;
 
-            
+
         }
 
 

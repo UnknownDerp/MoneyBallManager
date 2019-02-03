@@ -17,8 +17,8 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button Width="75" Height="25" Content="OK" Margin="0,5,5,5" Click="ConfirmButtonClick" Style="{StaticResource ButtonStyle}"/>
-            <Button Width="75" Height="25" Content="Cancel" Margin="0,5,5,5" IsCancel="True" Style="{StaticResource ButtonStyle}"/>
+            <Button Content="OK" Margin="0,5,5,5" Click="ConfirmButtonClick" Style="{StaticResource ButtonStyle}"/>
+            <Button Content="Cancel" Margin="0,5,5,5" IsCancel="True" Style="{StaticResource ButtonStyle}"/>
         </StackPanel>
     </Grid>
     

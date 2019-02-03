@@ -17,7 +17,7 @@
                 <TabItem Style="{StaticResource TabStyleSmall}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="GoalKeeperTab" Height="20" Width="20" Source="../Icons/icons8-soccer-goal-50.png"/>
+                            <Image Name="GoalKeeperTab" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-high-priority-96.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Goalkeeper" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
@@ -37,7 +37,7 @@
                 <TabItem Style="{StaticResource TabStyleSmall}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="DefenderTab" Height="20" Width="20" Source="../Icons/icons8-shield-50.png"/>
+                            <Image Name="DefenderTab" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-high-priority-96.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Defender" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
@@ -47,7 +47,7 @@
                 <TabItem Style="{StaticResource TabStyleSmall}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="MidfielderTab" Height="20" Width="20" Source="../Icons/icons8-player-change-50.png"/>
+                            <Image Name="MidfielderTab" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-high-priority-96.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Midfielder" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
@@ -57,7 +57,7 @@
                 <TabItem Style="{StaticResource TabStyleSmall}">
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="ForwardTab" Height="20" Width="20" Source="../Icons/icons8-sword-50.png"/>
+                            <Image Name="ForwardTab" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-high-priority-96.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Forward" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>

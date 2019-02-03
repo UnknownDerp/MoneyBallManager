@@ -9,40 +9,38 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid >
         <Grid Background="{x:Static colorConstants:ColorConstants.Background}">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                <StackPanel Orientation="Horizontal" Margin="0,3,0,5">
-                    <Button Style="{StaticResource ButtonStyle}" Click="AddPlayerButtonClick" Width="60" Height="30" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel Height="Auto">
+                <ListBox Name="PlayersListBox" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Height="Auto" HorizontalAlignment="Left" MinHeight="950">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Name}" FontSize="14"/>
+                                <TextBlock Text="{Binding Club.Name}" FontSize="12"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Button Style="{StaticResource ButtonStyle}" Click="AddPlayerButtonClick" Width="60" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
                             <Image Name="AddPlayerImage" Height="25" Width="25" Source="../Icons/Win10Styles/icons8-plus-64.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Add" Margin="5,0,0,0"/>
                         </StackPanel>
                     </Button>
-                    <Button Style="{StaticResource ButtonStyle}" Click="SavePlayersButtonClick" Width="60" Height="30" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Button Style="{StaticResource ButtonStyle}" Click="SavePlayersButtonClick" Width="60" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
                             <Image Name="SavePlayersImage" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-save-64.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Save" Margin="5,0,0,0"/>
                         </StackPanel>
                     </Button>
-                    <!--<Button Style="{StaticResource ButtonStyle}" Click="ImportPlayersButtonClick" Width="70" Height="30" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Button Style="{StaticResource ButtonStyle}" Click="ImportPlayersButtonClick" Width="70" Height="30" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="ImportPlayersImage" Height="20" Width="20" Source="../Icons/icons8-microsoft-excel-50.png"/>
+                            <Image Name="ImportPlayersImage" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-high-priority-96.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Import" Margin="5,0,0,0"/>
                         </StackPanel>
-                    </Button>-->
+                    </Button>
                 </StackPanel>
-                <Grid VerticalAlignment="Stretch">
-                    <ListBox Name="PlayersListBox" HorizontalAlignment="Left" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Height="Auto">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding Name}" FontSize="14"/>
-                                    <TextBlock Text="{Binding Club.Name}" FontSize="12"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </Grid>
-                
             </StackPanel>
         </Grid>
     </Grid>
