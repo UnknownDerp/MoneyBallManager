@@ -1,18 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Frontend.Pages;
 
 namespace Frontend.MatchPitch
 {
@@ -34,8 +24,25 @@ namespace Frontend.MatchPitch
             InitializeVerticalLines();
             InitializeHorizontalLines();
             InitializePlayerCircles();
-            var circles = _playerCircles.Select(x => x.GetPlayerCircle()).ToList();
+            Render();
+        }
+
+        public void Render()
+        {
+            var circles = _playerCircles.Select(x => x.GetPlayerCircle(Pitch.PitchHeight)).ToList();
             Pitch.Render(circles);
+        }
+
+        public void Render(List<PlayerCircle> formation)
+        {
+            var circles = formation.Select(x => x.GetPlayerCircle(Pitch.PitchHeight)).ToList();
+            Pitch.Render(circles);
+        }
+
+
+        public List<PlayerCircle> GetCurrentFormation()
+        {
+            return _playerCircles.Where(x => x.IsActive).ToList();
         }
 
         private void InitializePlayerCircles()
@@ -47,7 +54,7 @@ namespace Frontend.MatchPitch
                     var intersection = GetIntersection(horizontalLine, verticaLine);
                     if (ShouldAddPlayerCircle(horizontalLine.PlayerPosition, verticaLine.PitchPosition))
                     {
-                        _playerCircles.Add(new PlayerCircle(intersection, horizontalLine.PlayerPosition, verticaLine.PitchPosition, Pitch.PitchHeight));
+                        _playerCircles.Add(new PlayerCircle(intersection, horizontalLine.PlayerPosition, verticaLine.PitchPosition));
                     }
                 }
             }

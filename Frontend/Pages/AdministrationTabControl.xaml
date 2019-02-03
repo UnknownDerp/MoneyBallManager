@@ -8,10 +8,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Margin="5" Background="{x:Static colorConstants:ColorConstants.Background}">
-        <StackPanel HorizontalAlignment="Right">
+        <StackPanel HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Style="{StaticResource TextBlockStyle}" Text="Default Club" Margin="0 0 5 0"/>
-                <ComboBox Name="ClubsComboBox" Width="150" Height="25" Margin="2,5,5,5" ItemsSource="{Binding Clubs}" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="SetDefaultClub_Event"/>
+                <ComboBox Name="ClubsComboBox" Margin="2,5,5,5" ItemsSource="{Binding Clubs}" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="SetDefaultClub_Event" Style="{StaticResource ComboBoxStyle}"/>
             </StackPanel>
             <Button Width="150" Height="40" Content="Reset Database" Style="{StaticResource ButtonStyle}" Click="ResetDatabase_buttonClick" HorizontalAlignment="Right" Margin="0 0 5 0"/>
         </StackPanel>

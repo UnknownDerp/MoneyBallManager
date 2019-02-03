@@ -11,12 +11,46 @@
         <Setter Property="Width" Value="175"/>
         <Setter Property="Height" Value="55"/>
         <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border CornerRadius="0" Background="{TemplateBinding Background}" BorderThickness="0.5" BorderBrush="{x:Static colorConstants:ColorConstants.Black}">
+                        <Grid>
+                            <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Header}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="true">
+                            <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.ComplementaryLight}" />
+                            <Setter Property="Foreground" Value="{x:Static colorConstants:ColorConstants.White}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.MouseOverGray}" />
+                        </Trigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}" />
+                            <Setter Property="Foreground" Value="{x:Static colorConstants:ColorConstants.Black}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.DarkBackground}" />
+                            <Setter Property="Foreground" Value="{x:Static colorConstants:ColorConstants.White}" />
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
-    <Style x:Key="TabStyleSmall" TargetType="TabItem">
+    <Style x:Key="TabStyleSmall" TargetType="TabItem" BasedOn="{StaticResource TabStyle}">
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="35"/>
-        <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}"></Setter>
+    </Style>
+
+    <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="150"/>
     </Style>
 
     <Style x:Key="TextBlockStyle" TargetType="TextBlock">
@@ -34,7 +68,7 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{x:Static colorConstants:ColorConstants.DarkBackground}" BorderThickness="1, 1, 2, 2">
                         <Grid>
-                            <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            <ContentPresenter x:Name="ButtonContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
                         </Grid>
                     </Border>
 

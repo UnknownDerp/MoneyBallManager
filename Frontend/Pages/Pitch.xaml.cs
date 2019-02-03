@@ -23,10 +23,15 @@ namespace Frontend.Pages
         public Pitch()
         {
             InitializeComponent();
-            _height = 700.0;
+            _height = Canvas.Height;
             _width = _height * 0.66;
             _elements = new List<UIElement>();
 
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             DrawPitch();
             DrawLines();
         }
@@ -39,15 +44,16 @@ namespace Frontend.Pages
 
         public void Render(IEnumerable<UIElement> items)
         {
-
-            AddElementsToCanvas(items);
+            _elements.Clear();
             ClearCanvas();
+            AddElementsToCanvas(items);
             RenderElements();
         }
 
-        private void ClearCanvas()
+        public void ClearCanvas()
         {
             Canvas.Children.Clear();
+            Initialize();
         }
 
         public void AddElementToCanvas(UIElement element)

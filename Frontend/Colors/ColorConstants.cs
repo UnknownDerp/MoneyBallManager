@@ -8,6 +8,8 @@ namespace Frontend.Colors
         public static Brush ButtonColor => CreateColor("#FFEDEDF6");
         public static Brush MouseOverGray => CreateColor("#FFD0D0DF");
         public static Brush DarkBackground => CreateColor("#FF1D2633");
+        public static Brush ComplementaryBackground => CreateColor("#FF263243");
+        public static Brush ComplementaryLight => CreateColor("#FF2F3E54");
         public static Brush WarningRed => Brushes.Red;
         public static Brush Black => Brushes.Black;
         public static Brush White => Brushes.WhiteSmoke;

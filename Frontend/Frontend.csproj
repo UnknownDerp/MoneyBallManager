@@ -232,6 +232,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TacticsTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\MgmStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -246,6 +250,9 @@
     </Compile>
     <Compile Include="Pages\PlayersAndMatchesControl.xaml.cs">
       <DependentUpon>PlayersAndMatchesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TacticsTabControl.xaml.cs">
+      <DependentUpon>TacticsTabControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

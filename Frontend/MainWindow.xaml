@@ -63,9 +63,7 @@
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Tactics" Margin="5,0,0,0"/>
                         </StackPanel>
                     </TabItem.Header>
-                    <Grid HorizontalAlignment="Center">
-                        <matchPitch:PlayerGrid/>
-                    </Grid>
+                    <pages:TacticsTabControl/>
                 </TabItem>
                 <TabItem Style="{StaticResource TabStyle}">
                     <TabItem.Header>
