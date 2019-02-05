@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using Entities.Enums;
 
 namespace Frontend.MatchPitch
 {
@@ -33,16 +34,30 @@ namespace Frontend.MatchPitch
             Pitch.Render(circles);
         }
 
-        public void Render(List<PlayerCircle> formation)
+        public void Render(List<Position> formation)
         {
-            var circles = formation.Select(x => x.GetPlayerCircle(Pitch.PitchHeight)).ToList();
+            var circles = GetPlayerCirclesFormation(formation).Select(x => x.GetPlayerCircle(Pitch.PitchHeight)).ToList();
             Pitch.Render(circles);
         }
 
-
-        public List<PlayerCircle> GetCurrentFormation()
+        public List<Position> GetCurrentFormation()
         {
-            return _playerCircles.Where(x => x.IsActive).ToList();
+            return _playerCircles
+                .Select(x => new Position() { PitchPosition = x.PitchPosition, PlayerPosition = x.PlayerPosition })
+                .ToList();
+        }
+
+        private List<PlayerCircle> GetPlayerCirclesFormation(List<Position> positions)
+        {
+            var result = new List<PlayerCircle>();
+            foreach (var position in positions)
+            {
+                var horizontalLine = _horizontalLines.First(x => position.PlayerPosition == x.PlayerPosition);
+                var verticalLine = _verticaLines.First(x => position.PitchPosition == x.PitchPosition);
+                var intersection = GetIntersection(horizontalLine, verticalLine);
+                result.Add(new PlayerCircle(intersection, position.PlayerPosition, position.PitchPosition));
+            }
+            return result;
         }
 
         private void InitializePlayerCircles()
@@ -161,26 +176,6 @@ namespace Frontend.MatchPitch
         {
             return new Point(vertical.X, horizontal.Y);
         }
-    }
-
-    public enum PlayerPositionLine
-    {
-        Goalkeeper = 7,
-        Libro = 6,
-        Defender = 5,
-        DefensiveMidfielder = 4,
-        Midfielder = 3,
-        OffensiveMidfielder = 2,
-        Forward = 1
-    }
-
-    public enum PitchPositionLine
-    {
-        LeftWing = 0,
-        LeftCentral = 1,
-        Central = 2,
-        RightCentral = 3,
-        RightWing = 4,
     }
 
     public class HorizontalLine

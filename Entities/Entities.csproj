@@ -83,8 +83,12 @@
     <Compile Include="Entities\DatabaseMigrationScript.cs" />
     <Compile Include="Entities\Log.cs" />
     <Compile Include="Entities\ManagerProfile.cs" />
+    <Compile Include="Entities\Position.cs" />
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="Entities\Tactic.cs" />
     <Compile Include="Enums\LogSeverity.cs" />
+    <Compile Include="Enums\PitchPositionLine.cs" />
+    <Compile Include="Enums\PlayerPositionLine.cs" />
     <Compile Include="Enums\PlayerRoleTypes.cs" />
     <Compile Include="Enums\PositionTypes.cs" />
     <Compile Include="Interfaces\SQLiteEntity.cs" />
