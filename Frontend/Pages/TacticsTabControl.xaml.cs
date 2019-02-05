@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
+using Entities.Enums;
+using Frontend.MatchPitch;
 
 namespace Frontend.Pages
 {
@@ -29,7 +32,20 @@ namespace Frontend.Pages
 
         private void Tactic_ButtonClick(object sender, RoutedEventArgs e)
         {
-            var players = Pitch.GetCurrentFormation();
+            var players = new[]
+            {
+                new Position(){PitchPosition = PitchPositionLine.Central, PlayerPosition = PlayerPositionLine.Goalkeeper},
+                new Position(){PitchPosition = PitchPositionLine.RightWing, PlayerPosition = PlayerPositionLine.Defender},
+                new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Defender},
+                new Position(){PitchPosition = PitchPositionLine.LeftCentral, PlayerPosition = PlayerPositionLine.Defender},
+                new Position(){PitchPosition = PitchPositionLine.LeftWing, PlayerPosition = PlayerPositionLine.Defender},
+                new Position(){PitchPosition = PitchPositionLine.RightWing, PlayerPosition = PlayerPositionLine.Midfielder},
+                new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Midfielder},
+                new Position(){PitchPosition = PitchPositionLine.LeftCentral, PlayerPosition = PlayerPositionLine.Midfielder},
+                new Position(){PitchPosition = PitchPositionLine.LeftWing, PlayerPosition = PlayerPositionLine.Midfielder},
+                new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Forward},
+                new Position(){PitchPosition = PitchPositionLine.LeftCentral, PlayerPosition = PlayerPositionLine.Forward},
+            };
             Pitch.Render(players);
         }
     }

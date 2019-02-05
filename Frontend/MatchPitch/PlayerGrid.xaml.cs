@@ -34,7 +34,7 @@ namespace Frontend.MatchPitch
             Pitch.Render(circles);
         }
 
-        public void Render(List<Position> formation)
+        public void Render(IEnumerable<Position> formation)
         {
             var circles = GetPlayerCirclesFormation(formation).Select(x => x.GetPlayerCircle(Pitch.PitchHeight)).ToList();
             Pitch.Render(circles);
@@ -47,11 +47,12 @@ namespace Frontend.MatchPitch
                 .ToList();
         }
 
-        private List<PlayerCircle> GetPlayerCirclesFormation(List<Position> positions)
+        private List<PlayerCircle> GetPlayerCirclesFormation(IEnumerable<Position> positions)
         {
             var result = new List<PlayerCircle>();
             foreach (var position in positions)
             {
+                //Get all the positions for centrer, if two use 1 and 3, if three use 0, 2 and 4
                 var horizontalLine = _horizontalLines.First(x => position.PlayerPosition == x.PlayerPosition);
                 var verticalLine = _verticaLines.First(x => position.PitchPosition == x.PitchPosition);
                 var intersection = GetIntersection(horizontalLine, verticalLine);
