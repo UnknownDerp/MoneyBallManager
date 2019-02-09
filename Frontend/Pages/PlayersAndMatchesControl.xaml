@@ -10,7 +10,7 @@
     <Grid >
         <Grid Background="{x:Static colorConstants:ColorConstants.Background}">
             <StackPanel Height="Auto">
-                <ListBox Name="PlayersListBox" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Height="Auto" HorizontalAlignment="Left" MinHeight="950">
+                <ListBox Name="PlayersListBox" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Height="Auto" HorizontalAlignment="Left" MinHeight="950" DataContextChanged="PlayersListBox_OnDataContextChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center">

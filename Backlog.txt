@@ -7,9 +7,9 @@ DONE
 - Player Placement on pitch 
 - Window resized when minimize and open again
 - Fix Listbox Heights
+- Update fields in other tabs when add/remove
 
 BACKLOG
-- Update fields in other tabs when add/remove
 - Create Generic TabItem Component
 - Matches
 - Create and save tactics

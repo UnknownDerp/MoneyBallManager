@@ -61,5 +61,10 @@ namespace Frontend.Pages
         private void ImportClubsButtonClick(object sender, RoutedEventArgs e)
         {
         }
+
+        private void ClubsListBox_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            ClubsListBox.Items.Refresh();
+        }
     }
 }

@@ -9,7 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{x:Static colorConstants:ColorConstants.Background}">
         <StackPanel Name="CreateProfileView" Orientation="Vertical">
-            <ListBox Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Name="ManagerProfilesListBox" HorizontalAlignment="Left" MinHeight="950">
+            <ListBox Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Name="ManagerProfilesListBox" HorizontalAlignment="Left" MinHeight="950" DataContextChanged="ManagerProfilesListBox_OnDataContextChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">

@@ -26,12 +26,14 @@ namespace Frontend.Pages
     public partial class ManagerProfileTabControl : UserControl
     {
         private readonly ManagerProfile _managerProfile;
-        public ManagerProfileTabControl(ManagerProfile managerProfile, Panel owner)
+        private readonly Action<ManagerProfile> _saveCallback;
+        public ManagerProfileTabControl(ManagerProfile managerProfile, Panel owner, Action<ManagerProfile> saveCallback)
         {
             InitializeComponent();
 
             Init(managerProfile);
             CreateButtons(owner);
+            _saveCallback = saveCallback;
         }
 
         private void CreateButtons(Panel owner)
@@ -51,15 +53,12 @@ namespace Frontend.Pages
 
         private void Save()
         {
-            var mbm = new MbmDbContext();
             var managerProfile = new ManagerProfile()
             {
                 Name = ProfileNameTextBox.Text,
                 Created = DateTime.Now.ToMbmString()
             };
-
-            mbm.ManagerProfiles.Add(managerProfile);
-            mbm.SaveChanges();
+            _saveCallback(managerProfile);
         }
 
         private bool IsValid()

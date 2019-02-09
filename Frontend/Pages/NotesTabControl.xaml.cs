@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using CommandQuery.DatabaseContext;
 using Entities.Entities;
 using Entities.Extensions;
+using Frontend.Extensions;
 
 namespace Frontend.Pages
 {
@@ -36,10 +37,8 @@ namespace Frontend.Pages
 
         private void Save_ButtonClick(object sender, RoutedEventArgs e)
         {
-            var dbCommunicator = new DatabaseCommunicator();
             var note = new Note() { DateEdited = DateTime.Now.ToMbmString(), Message = TextBox.Text };
-            _notes.Add(note);
-            dbCommunicator.Add(note);
+            _notes.AddAndSave(note);
         }
 
         private void ManagerProfilesListBox_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e) //This is the solution to my life problems!!!!

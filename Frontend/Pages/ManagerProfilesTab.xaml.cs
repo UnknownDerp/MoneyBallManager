@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CommandQuery.DatabaseContext;
 using Entities.Entities;
+using Frontend.Extensions;
 
 namespace Frontend.Pages
 {
@@ -32,7 +33,7 @@ namespace Frontend.Pages
             ManagerProfilesListBox.ItemsSource = _managerProfiles;
             DataContext = this;
         }
-        
+
         private void CreateNewManagerProfileClick(object sender, RoutedEventArgs e)
         {
             ShowManagerProfileWindow(null, CreateProfileView);
@@ -41,13 +42,19 @@ namespace Frontend.Pages
         private void ShowManagerProfileWindow(ManagerProfile managerProfile, Panel owner)
         {
             owner.Visibility = Visibility.Collapsed;
-            ManagerProfileTabControl.Children.Add(new ManagerProfileTabControl(managerProfile, owner));
+            var callback = new Action<ManagerProfile>(x => { _managerProfiles.AddAndSave(x); });
+            ManagerProfileTabControl.Children.Add(new ManagerProfileTabControl(managerProfile, owner, callback));
         }
 
         private void EditManagerProfileClick(object sender, RoutedEventArgs e)
         {
-            var profile = ManagerProfilesListBox.SelectedItem as ManagerProfile; 
+            var profile = ManagerProfilesListBox.SelectedItem as ManagerProfile;
             ShowManagerProfileWindow(profile, CreateProfileView);
+        }
+
+        private void ManagerProfilesListBox_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            ManagerProfilesListBox.Items.Refresh();
         }
     }
 }

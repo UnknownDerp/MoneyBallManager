@@ -11,16 +11,16 @@
     <Grid >
         <Grid Background="{x:Static colorConstants:ColorConstants.Background}" Height="Auto">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                <ListBox Name="ClubsListBox" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" HorizontalAlignment="Left" MinHeight="950">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding Name}" FontSize="14"/>
-                                    <TextBlock Text="{Binding Players.Count, StringFormat='No. of Players: {0}'}" FontSize="12"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                <ListBox Name="ClubsListBox" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" HorizontalAlignment="Left" MinHeight="950" DataContextChanged="ClubsListBox_OnDataContextChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Name}" FontSize="14"/>
+                                <TextBlock Text="{Binding Players.Count, StringFormat='No. of Players: {0}'}" FontSize="12"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                     <Button Style="{StaticResource ButtonStyle}" Click="AddClubButtonClick" Width="60" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">

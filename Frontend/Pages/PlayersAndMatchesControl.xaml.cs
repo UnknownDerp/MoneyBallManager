@@ -61,5 +61,10 @@ namespace Frontend.Pages
         {
 
         }
+
+        private void PlayersListBox_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            PlayersListBox.Items.Refresh();
+        }
     }
 }
