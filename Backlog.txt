@@ -1,19 +1,21 @@
 DONE
 - Save club fom add player -> Done, but player list don't show clubname until restart
-- Set Default club from admin -> Done
-- Confirm Dialog for dangerous operations -> Done
-- Add Color constants -> Done
-- Match field -> Done
+- Set Default club from admin
+- Confirm Dialog for dangerous operations
+- Add Color constants
+- Match field
 - Player Placement on pitch 
+- Window resized when minimize and open again
+- Fix Listbox Heights
 
 BACKLOG
 - Update fields in other tabs when add/remove
 - Create Generic TabItem Component
 - Matches
-- Fix Listbox Heights
-- Window resized when minimize and open again
 - Create and save tactics
 - Password Requirements
+- Add and edit notes
+- The whole Manager Profile page
 
 LOW PRIORITIZED THINGS
 - Problem reporting (Email)

@@ -11,7 +11,7 @@
         mc:Ignorable="d"
         Title="Money Ball Manager" Height="1080" Width="1920" Icon="Logos/logo.png"
         Style="{StaticResource WindowStyle}" WindowStartupLocation="CenterScreen"
-        SizeChanged="MainWindowChangedSize" MinWidth="1920" MinHeight="1080">
+        MinWidth="1920" MinHeight="1080">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Close" Executed="CloseCommandHandler"/>
     </Window.CommandBindings>
@@ -36,6 +36,17 @@
                     </TabItem.Header>
                     <Grid>
                         <pages:ManagerProfilesTab/>
+                    </Grid>
+                </TabItem>
+                <TabItem Style="{StaticResource TabStyle}">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Name="NotesIcon" Height="32" Width="32" Source="Icons/Win10Styles/icons8-edit-64.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Notes" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <pages:NotesTabControl/>
                     </Grid>
                 </TabItem>
                 <TabItem Style="{StaticResource TabStyle}">

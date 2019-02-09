@@ -13,10 +13,11 @@ namespace CommandQuery.DatabaseContext
         public DbSet<DatabaseMigrationScript> MigrationScripts { get; set; }
         public DbSet<Club> Clubs { get; set; }
         public DbSet<Log> LogMessages { get; set; }
+        public DbSet<Note> Notes { get; set; }
 
         public MbmDbContext() : base(new SQLiteConnection()
         {
-            
+
             ConnectionString = new SQLiteConnectionStringBuilder
             {
                 DataSource = "C:\\Users\\Goustmachine\\Documents\\Genvägar\\Programming\\MoneyBallManager\\database.db",
@@ -42,7 +43,7 @@ namespace CommandQuery.DatabaseContext
             Players.RemoveRange(Players);
             ManagerProfiles.RemoveRange(ManagerProfiles);
             Clubs.RemoveRange(Clubs);
-            Clubs.Add(new Club(){ Id = 1, Name = "Free Agent", HomeColor = "#00FFFFFF", AwayColor = "#00FFFFFF", ThirdColor = "#00FFFFFF", IsDefault = true});
+            Clubs.Add(new Club() { Id = 1, Name = "Free Agent", HomeColor = "#00FFFFFF", AwayColor = "#00FFFFFF", ThirdColor = "#00FFFFFF", IsDefault = true });
             SaveChanges();
         }
     }

@@ -87,7 +87,7 @@ namespace Frontend.MatchPitch
                 PitchPosition = PitchPositionLine.LeftWing
             });
 
-            var numOfCentralLines = 5;
+            const int numOfCentralLines = 5;
             var middleMargin = bigWidth / numOfCentralLines;
             for (var i = 0; i < numOfCentralLines; i++)
             {

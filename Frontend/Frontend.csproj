@@ -224,6 +224,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\NotesTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Pitch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -244,6 +248,9 @@
   <ItemGroup>
     <Compile Include="Pages\MbmTabItem.xaml.cs">
       <DependentUpon>MbmTabItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NotesTabControl.xaml.cs">
+      <DependentUpon>NotesTabControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Pitch.xaml.cs">
       <DependentUpon>Pitch.xaml</DependentUpon>

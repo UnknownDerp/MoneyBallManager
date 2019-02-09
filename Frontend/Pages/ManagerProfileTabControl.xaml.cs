@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CommandQuery.DatabaseContext;
 using Entities.Entities;
+using Entities.Extensions;
 
 namespace Frontend.Pages
 {
@@ -28,7 +29,7 @@ namespace Frontend.Pages
         public ManagerProfileTabControl(ManagerProfile managerProfile, Panel owner)
         {
             InitializeComponent();
-            
+
             Init(managerProfile);
             CreateButtons(owner);
         }
@@ -54,9 +55,9 @@ namespace Frontend.Pages
             var managerProfile = new ManagerProfile()
             {
                 Name = ProfileNameTextBox.Text,
-                Created = DateTime.Now.ToString("dd MMM yyyy HH:mm")
+                Created = DateTime.Now.ToMbmString()
             };
-            
+
             mbm.ManagerProfiles.Add(managerProfile);
             mbm.SaveChanges();
         }

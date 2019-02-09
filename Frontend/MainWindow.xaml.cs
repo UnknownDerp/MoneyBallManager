@@ -24,14 +24,13 @@ namespace Frontend
         {
             //var test = new SplashScreen("Logos/Spashscreen.png");
             //test.Show(false);
-
-
             InitializeComponent();
-            
+
             //Thread.Sleep(3000);
             //test.Close(TimeSpan.FromSeconds(3));
             SizeToContent = SizeToContent.WidthAndHeight;
             this.ResizeMode = ResizeMode.CanMinimize;
+            MoveElements(this.Width, this.Height);
         }
 
         private void MoveElements(double width, double height)
@@ -46,20 +45,9 @@ namespace Frontend
             Application.Current.Shutdown();
         }
 
-        private void MainWindowChangedSize(object sender, SizeChangedEventArgs e)
-        {
-            MoveElements(this.Width, this.Height);
-        }
-
-        protected override void OnStateChanged(EventArgs e)
-        {
-            base.OnStateChanged(e);
-            MoveElements(this.Width, this.Height);
-        }
-
         private void MainTabs_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
+
         }
     }
 }

@@ -106,7 +106,7 @@
 
     <Style x:Key="ListBoxStyle" TargetType="ListBox">
         <Setter Property="Background" Value="{x:Static colorConstants:ColorConstants.Background}"/>
-        <Setter Property="Width" Value="200"/>
+        <Setter Property="Width" Value="250"/>
     </Style>
 
     <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
