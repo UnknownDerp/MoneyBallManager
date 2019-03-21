@@ -124,6 +124,9 @@
     <Compile Include="Graphs\GraphingWindow.xaml.cs">
       <DependentUpon>GraphingWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Icons\XamlSvg\Logo.xaml.cs">
+      <DependentUpon>Logo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MatchPitch\PlayerCircle.cs" />
     <Compile Include="MatchPitch\PlayerGrid.xaml.cs">
       <DependentUpon>PlayerGrid.xaml</DependentUpon>
@@ -167,6 +170,18 @@
     <Page Include="Graphs\GraphingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Icons\XamlSvg\Logo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Icons\XamlSvg\MBMLOGOFilled.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Icons\XamlSvg\MBMLOGOFilledSmall.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

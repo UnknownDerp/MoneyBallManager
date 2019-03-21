@@ -3,11 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:frontend="clr-namespace:Frontend"
         xmlns:pages="clr-namespace:Frontend.Pages"
-        xmlns:graphs="clr-namespace:Frontend.Graphs"
+        xmlns:Logo="clr-namespace:Frontend.Icons.XamlSvg"
         xmlns:colorConstants="clr-namespace:Frontend.Colors"
-        xmlns:matchPitch="clr-namespace:Frontend.MatchPitch"
         mc:Ignorable="d"
         Title="Money Ball Manager" Height="1080" Width="1920" Icon="Logos/logo.png"
         Style="{StaticResource WindowStyle}" WindowStartupLocation="CenterScreen"
@@ -18,9 +16,11 @@
     <Grid Background="{x:Static colorConstants:ColorConstants.DarkBackground}">
         <Grid Height="50" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Stretch">
-                <Image Name="MbmIcon" Width="45" Height="45" HorizontalAlignment="Left" Source="Logos/logo.png"/>
+                <!--<Image Name="MbmIcon" Width="45" Height="45" HorizontalAlignment="Left" Source="Logos/logo.png"/>-->
+                <Logo:Logo Height="45" Width="45"/>
+
                 <TextBlock Style="{StaticResource TextBlockStyle}" Foreground="{x:Static colorConstants:ColorConstants.Background}" Margin="5,0,0,0" Name="MbM" FontWeight="Bold" Text="MBM" FontSize="30"/>
-                <pages:Clock x:Name="Clock"></pages:Clock>
+                <pages:Clock x:Name="Clock"/>
             </StackPanel>
         </Grid>
         <Grid>

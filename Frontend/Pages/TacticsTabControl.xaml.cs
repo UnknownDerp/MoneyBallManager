@@ -39,12 +39,21 @@ namespace Frontend.Pages
                 new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Defender},
                 new Position(){PitchPosition = PitchPositionLine.LeftCentral, PlayerPosition = PlayerPositionLine.Defender},
                 new Position(){PitchPosition = PitchPositionLine.LeftWing, PlayerPosition = PlayerPositionLine.Defender},
-                new Position(){PitchPosition = PitchPositionLine.RightWing, PlayerPosition = PlayerPositionLine.Midfielder},
-                new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Midfielder},
+
+                //new Position(){PitchPosition = PitchPositionLine.RightWing, PlayerPosition = PlayerPositionLine.Midfielder},
+                //new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Midfielder},
+                //new Position(){PitchPosition = PitchPositionLine.LeftCentral, PlayerPosition = PlayerPositionLine.Midfielder},
+                //new Position(){PitchPosition = PitchPositionLine.LeftWing, PlayerPosition = PlayerPositionLine.Midfielder},
+
+                //new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Forward},
+                //new Position(){PitchPosition = PitchPositionLine.LeftCentral, PlayerPosition = PlayerPositionLine.Forward},
                 new Position(){PitchPosition = PitchPositionLine.LeftCentral, PlayerPosition = PlayerPositionLine.Midfielder},
-                new Position(){PitchPosition = PitchPositionLine.LeftWing, PlayerPosition = PlayerPositionLine.Midfielder},
-                new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Forward},
+                new Position(){PitchPosition = PitchPositionLine.Central, PlayerPosition = PlayerPositionLine.Midfielder},
+                new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Midfielder},
+
                 new Position(){PitchPosition = PitchPositionLine.LeftCentral, PlayerPosition = PlayerPositionLine.Forward},
+                new Position(){PitchPosition = PitchPositionLine.Central, PlayerPosition = PlayerPositionLine.Forward},
+                new Position(){PitchPosition = PitchPositionLine.RightCentral, PlayerPosition = PlayerPositionLine.Forward},
             };
             Pitch.Render(players);
         }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Name="svg3751" Width="777" Height="480">
+    <Canvas.Resources/>
+    <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="0" Canvas.Top="0" Width="100%" Height="100%" Name="backgroundrect" Fill="#FFFFFFFF"/>
+    <Canvas Name="g3749">
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_2" Fill="#FFF0F0FF" StrokeThickness="8" Stroke="#FF1D2633" StrokeLineJoin="Round" Data="M257.7332731573975 218.48046450678487 L314.36593027293634 105.21516801302722 L465.38633742280945 105.21516801302722 L522.0189768010317 218.48046450678487 L465.38633742280945 331.7457610005376 L314.36593027293634 331.7457610005376 L257.7332731573975 218.48046450678487 z"/>
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_11" StrokeThickness="5" Stroke="#FF1D2633" StrokeLineJoin="Round" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Opacity="1" Data="M314.28100079356403 105.38348613012268 L465.3077209982606 331.6479243252774 "/>
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_3" StrokeThickness="5" Stroke="#FF1D2633" StrokeLineJoin="Round" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Opacity="1" Data="M314.3428431919643 331.14285714285717L465.19998604910717 105.42857142857142"/>
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_12" StrokeThickness="5" Stroke="#FF1D2633" StrokeLineJoin="Round" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Opacity="1" Data="M258.05712890625 218.28571428571428 L521.7714146205357 218.57142857142858 "/>
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_10" Fill="#FF1D2633" StrokeThickness="2" Stroke="#FF1D2633" StrokeLineJoin="Round" Data="M335.7332796810165 218.6641365234554 L358.74348015915615 172.64374277395942 L420.1040099629994 172.64374277395942 L443.11420323435703 218.6641365234554 L420.1040099629994 264.68453027294936 L358.74348015915615 264.68453027294936 L335.7332796810165 218.6641365234554 z"/>
+    </Canvas>
+</Canvas>

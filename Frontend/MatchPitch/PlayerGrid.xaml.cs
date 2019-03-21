@@ -36,7 +36,7 @@ namespace Frontend.MatchPitch
 
         public void Render(IEnumerable<Position> formation)
         {
-            var circles = GetPlayerCirclesFormation(formation).Select(x => x.GetPlayerCircle(Pitch.PitchHeight)).ToList();
+            var circles = GetPlayerCirclesFormation(formation.ToList()).Select(x => x.GetPlayerCircle(Pitch.PitchHeight)).ToList();
             Pitch.Render(circles);
         }
 
@@ -47,12 +47,12 @@ namespace Frontend.MatchPitch
                 .ToList();
         }
 
-        private List<PlayerCircle> GetPlayerCirclesFormation(IEnumerable<Position> positions)
+        private IEnumerable<PlayerCircle> GetPlayerCirclesFormation(IList<Position> positions)
         {
             var result = new List<PlayerCircle>();
             foreach (var position in positions)
             {
-                //Get all the positions for centrer, if two use 1 and 3, if three use 0, 2 and 4
+                //Get all the positions for center, if two use 1 and 3, if three use 0, 2 and 4
                 var horizontalLine = _horizontalLines.First(x => position.PlayerPosition == x.PlayerPosition);
                 var verticalLine = _verticaLines.First(x => position.PitchPosition == x.PitchPosition);
                 var intersection = GetIntersection(horizontalLine, verticalLine);
@@ -70,7 +70,7 @@ namespace Frontend.MatchPitch
                     var intersection = GetIntersection(horizontalLine, verticaLine);
                     if (ShouldAddPlayerCircle(horizontalLine.PlayerPosition, verticaLine.PitchPosition))
                     {
-                        _playerCircles.Add(new PlayerCircle(intersection, horizontalLine.PlayerPosition, verticaLine.PitchPosition));
+                        _playerCircles.Add(new PlayerCircle(intersection, horizontalLine.PlayerPosition, verticaLine.PitchPosition, true));
                     }
                 }
             }

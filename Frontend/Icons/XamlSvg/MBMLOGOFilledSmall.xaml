@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is compatible with Silverlight-->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Name="svg3751" Width="777" Height="480">
+  <Canvas.Resources/>
+  <!--Unknown tag: metadata-->
+  <!--Unknown tag: sodipodi:namedview-->
+  <Canvas Name="g3749">
+    <Canvas.RenderTransform>
+      <MatrixTransform Matrix="0.16386406 0 0 0.18810637 -40.024104 -17.223606"/>
+    </Canvas.RenderTransform>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_1" Fill="#FF4A90D6" StrokeThickness="2" Stroke="#FF1D2633" StrokeLineJoin="Round" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Opacity="1" Data="M 293.28161 110.55101"/>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_2" Fill="#FFF0F0FF" StrokeThickness="8" Stroke="#FF1D2633" StrokeLineJoin="Round" Data="m 257.73327 218.48046 56.63266 -113.26529 h 151.02041 l 56.63264 113.26529 -56.63264 113.2653 H 314.36593 Z"/>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_6" StrokeThickness="2" Stroke="#FF1D2633" StrokeLineJoin="Round" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Opacity="1" Data="M 314.281 105.38349 465.30772 331.64792"/>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_11" StrokeThickness="5" Stroke="#FF1D2633" StrokeLineJoin="Round" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Opacity="1" Data="M 314.281 105.38349 465.30772 331.64792"/>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_3" StrokeThickness="5" Stroke="#FF1D2633" StrokeLineJoin="Round" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Opacity="1" Data="M 314.34284 331.14286 465.19999 105.42857"/>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_7" StrokeThickness="2" Stroke="#FF1D2633" StrokeLineJoin="Round" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Opacity="1" Data="m 258.05713 218.28571 263.71428 0.28572"/>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_12" StrokeThickness="5" Stroke="#FF1D2633" StrokeLineJoin="Round" StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" Opacity="1" Data="m 258.05713 218.28571 263.71428 0.28572"/>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="svg_10" Fill="#FF1D2633" StrokeThickness="2" Stroke="#FF1D2633" StrokeLineJoin="Round" Data="m 335.73328 218.66414 23.0102 -46.0204 h 61.36053 l 23.01019 46.0204 -23.01019 46.02039 h -61.36053 z"/>
+  </Canvas>
+</Canvas>

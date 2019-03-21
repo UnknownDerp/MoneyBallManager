@@ -15,11 +15,13 @@ namespace Frontend.MatchPitch
         public PlayerPositionLine PlayerPosition { get; }
         public PitchPositionLine PitchPosition { get; }
         public bool IsActive { get; private set; }
+        private readonly bool _clickable;
 
-        public PlayerCircle(Point position, PlayerPositionLine playerPosition, PitchPositionLine pitchPosition)
+        public PlayerCircle(Point position, PlayerPositionLine playerPosition, PitchPositionLine pitchPosition, bool active = false)
         {
-            IsActive = false;
+            IsActive = active;
             _position = position;
+            _clickable = active;
             PlayerPosition = playerPosition;
             PitchPosition = pitchPosition;
         }
@@ -53,7 +55,7 @@ namespace Frontend.MatchPitch
 
             };
             playerCircle.MouseUp += OnClick;
-            playerCircle.Opacity = 0.5;
+            playerCircle.Opacity = GetOpacity();
             playerCircle.Fill = ColorConstants.Background;
             return playerCircle;
         }
@@ -65,12 +67,22 @@ namespace Frontend.MatchPitch
 
         private void OnClick(object sender, MouseButtonEventArgs e)
         {
+            if (!_clickable)
+            {
+                return;
+            }
+
             var playerCircle = sender as Ellipse;
             if (playerCircle != null)
             {
-                playerCircle.Opacity = !IsActive ? 1 : 0.5;
                 ToggleActive();
+                playerCircle.Opacity = GetOpacity();
             }
+        }
+
+        private double GetOpacity()
+        {
+            return !IsActive ? 1 : 0.5;
         }
     }
 }
