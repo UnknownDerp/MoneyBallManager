@@ -52,7 +52,19 @@ namespace CommandQuery.DatabaseContext
         {
             _dbContext.Set<T>().Add(entity);
             _dbContext.SaveChanges();
-            Logger.Log($"{entity.GetType()}");
+            Logger.Log($"Added {entity.GetType()}");
+        }
+
+        public void Remove<T>(Expression<Func<T, bool>> predicate) where T : class
+        {
+            var entity = _dbContext.Set<T>().FirstOrDefault(predicate);
+            if (entity != null)
+            {
+                _dbContext.Set<T>().Remove(entity);
+                _dbContext.SaveChanges();
+                Logger.Log($"Removed {entity.GetType()}");
+            }
+
         }
 
         public void ResetDatabase()
@@ -66,7 +78,7 @@ namespace CommandQuery.DatabaseContext
     {
         public NoEntityFoundException() : base()
         {
-            
+
         }
     }
 }

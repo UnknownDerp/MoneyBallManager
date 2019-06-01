@@ -96,10 +96,26 @@
         </Setter>
     </Style>
 
-    <Style x:Key="ButtonStyleInactive" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+    <Style x:Key="ManagerProfilesEditButtonInactive" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
         <Style.Triggers>
             <DataTrigger Binding="{Binding ElementName=ManagerProfilesListBox, Path=SelectedIndex}" Value="-1">
                 <Setter Property="Button.IsEnabled" Value="False"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="NotesListBoxInactive" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=NotesListBox, Path=SelectedIndex}" Value="-1">
+                <Setter Property="Button.IsEnabled" Value="False"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TextBoxEnabledButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonStyle}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Text.Length, ElementName=NoteTextBox, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                <Setter Property="IsEnabled" Value="False"/>
             </DataTrigger>
         </Style.Triggers>
     </Style>
