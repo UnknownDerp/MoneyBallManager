@@ -43,6 +43,7 @@ namespace Frontend.MatchPitch
         public List<Position> GetCurrentFormation()
         {
             return _playerCircles
+                .Where(x => !x.IsActive)
                 .Select(x => new Position() { PitchPosition = x.PitchPosition, PlayerPosition = x.PlayerPosition })
                 .ToList();
         }

@@ -12,7 +12,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button Style="{StaticResource ButtonStyle}" Content="Render" Click="ButtonBase_OnClick"></Button>
                 <Button Style="{StaticResource ButtonStyle}" Content="Tactic" Click="Tactic_ButtonClick"></Button>
-                <Button Style="{StaticResource ButtonStyle}" Content="Save" Click="Save_ButtonCLick"></Button>
+                <Button x:Name="SaveButton" Style="{StaticResource ButtonStyle}" Content="Save" Click="Save_ButtonCLick"></Button>
             </StackPanel>
             <matchPitch:PlayerGrid x:Name="Pitch"/>
         </StackPanel>

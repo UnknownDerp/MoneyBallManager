@@ -8,13 +8,13 @@ DONE
 - Window resized when minimize and open again
 - Fix Listbox Heights
 - Update fields in other tabs when add/remove
+- Add and edit notes
 
 BACKLOG
 - Create Generic TabItem Component
 - Matches
 - Create and save tactics
 - Password Requirements
-- Add and edit notes
 - The whole Manager Profile page
 
 LOW PRIORITIZED THINGS
