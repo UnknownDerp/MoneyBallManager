@@ -93,17 +93,25 @@ namespace Frontend.MatchPitch
             {
                 var x = bigWidth / 2 + (middleMargin * i);
                 PitchPositionLine line;
-                if (i < 2)
+                if (i == 0)
                 {
-                    line = PitchPositionLine.LeftCentral;
+                    line = PitchPositionLine.LeftCentralOuter;
                 }
-                else if (i > 2)
+                else if (i == 1)
                 {
-                    line = PitchPositionLine.RightCentral;
+                    line = PitchPositionLine.LeftCentralInner;
+                }
+                else if (i == 2)
+                {
+                    line = PitchPositionLine.Central;
+                }
+                else if (i == 3)
+                {
+                    line = PitchPositionLine.RightCentralInner;
                 }
                 else
                 {
-                    line = PitchPositionLine.Central;
+                    line = PitchPositionLine.RightCentralOuter;
                 }
                 _verticaLines.Add(new VerticalLine()
                 {
@@ -167,8 +175,8 @@ namespace Frontend.MatchPitch
                     return pitchPosition == PitchPositionLine.Central;
                 case PlayerPositionLine.Forward:
                     return pitchPosition == PitchPositionLine.Central ||
-                           pitchPosition == PitchPositionLine.LeftCentral ||
-                           pitchPosition == PitchPositionLine.RightCentral;
+                           pitchPosition == PitchPositionLine.LeftCentralOuter ||
+                           pitchPosition == PitchPositionLine.RightCentralOuter;
             }
             return true;
         }

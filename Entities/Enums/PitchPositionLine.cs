@@ -3,9 +3,11 @@ namespace Entities.Enums
     public enum PitchPositionLine
     {
         LeftWing = 0,
-        LeftCentral = 1,
-        Central = 2,
-        RightCentral = 3,
-        RightWing = 4,
+        LeftCentralOuter = 1,
+        LeftCentralInner = 2,
+        Central = 3,
+        RightCentralInner = 4,
+        RightCentralOuter = 5,
+        RightWing = 6,
     }
 }
