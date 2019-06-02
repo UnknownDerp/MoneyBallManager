@@ -104,6 +104,14 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="PlayersPageButtonInactive" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=PlayersListBox, Path=SelectedIndex}" Value="-1">
+                <Setter Property="Button.IsEnabled" Value="False"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
     <Style x:Key="NotesListBoxInactive" TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
         <Style.Triggers>
             <DataTrigger Binding="{Binding ElementName=NotesListBox, Path=SelectedIndex}" Value="-1">

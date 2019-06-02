@@ -43,16 +43,6 @@ namespace Frontend.Pages
             }
         }
 
-        private void SavePlayersButtonClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ImportPlayersButtonClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void PlayersListBox_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             PlayersListBox.Items.Refresh();
@@ -83,8 +73,19 @@ namespace Frontend.Pages
             var result = fileDialog.ShowDialog();
             if (result.HasValue && result.Value)
             {
+                var dbCommunicator = new DatabaseCommunicator();
                 var filename = fileDialog.FileName;
             }
+        }
+
+        private void UpdateButtonClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

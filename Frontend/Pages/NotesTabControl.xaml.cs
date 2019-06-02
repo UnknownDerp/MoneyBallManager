@@ -53,14 +53,9 @@ namespace Frontend.Pages
             ResetTextBox(NoteTextBox);
         }
 
-        private void RefreshItems()
-        {
-            NotesListBox.Items.Refresh();
-        }
-
         private void ManagerProfilesListBox_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e) //This is the solution to my life problems!!!!
         {
-            RefreshItems();
+            NotesListBox.Items.Refresh();
         }
 
         private void NotesListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -84,7 +79,6 @@ namespace Frontend.Pages
                     dbCommunicator.Remove<Note>(x => x.Id == selectedItem.Id);
                     _notes.Remove(selectedItem);
                     ResetTextBox(TextBoxReadonly);
-                    RefreshItems();
                 }
             }
         }
@@ -111,7 +105,6 @@ namespace Frontend.Pages
                 selectedItem.Message = TextBoxReadonly.Text;
                 dbCommunicator.Get<Note>(x => x.Id == selectedItem.Id).Message = TextBoxReadonly.Text;
                 dbCommunicator.SaveChanges();
-                RefreshItems();
             }
         }
     }

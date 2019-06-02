@@ -26,22 +26,22 @@
                 </ListBox>
 
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                    <Button Style="{StaticResource ButtonStyle}" Click="AddPlayerButtonClick" Width="60" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Button Style="{StaticResource ButtonStyle}" Click="AddPlayerButtonClick" Width="80" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
                             <Image Name="AddPlayerImage" Height="25" Width="25" Source="../Icons/Win10Styles/icons8-plus-64.png"/>
                             <TextBlock Style="{StaticResource TextBlockStyle}" Text="Add" Margin="5,0,0,0"/>
                         </StackPanel>
                     </Button>
-                    <Button Style="{StaticResource ButtonStyle}" Click="SavePlayersButtonClick" Width="60" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Button Style="{StaticResource PlayersPageButtonInactive}" Click="UpdateButtonClick" Width="80" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="SavePlayersImage" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-save-64.png"/>
-                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Save" Margin="5,0,0,0"/>
+                            <Image Name="SavePlayersImage" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-edit-64.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Update" Margin="5,0,0,0"/>
                         </StackPanel>
                     </Button>
-                    <Button Style="{StaticResource ButtonStyle}" Click="ImportPlayersButtonClick" Width="70" Height="30" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Button Style="{StaticResource PlayersPageButtonInactive}" Click="DeleteButtonClick" Width="80" Height="30" Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
-                            <Image Name="ImportPlayersImage" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-high-priority-96.png"/>
-                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Import" Margin="5,0,0,0"/>
+                            <Image Name="ImportPlayersImage" Height="20" Width="20" Source="../Icons/Win10Styles/icons8-trash-64.png"/>
+                            <TextBlock Style="{StaticResource TextBlockStyle}" Text="Delete" Margin="5,0,0,0"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
