@@ -27,7 +27,9 @@ namespace Frontend.Dialogs
                     Name = NameTextBox.ComponentText,
                     ClubId = club.Id,
                     Height = int.Parse(HeightTextBox.ComponentText),
-                    Weight = int.Parse(WeightTextBox.ComponentText)
+                    Weight = int.Parse(WeightTextBox.ComponentText),
+                    PlayerRole = (PlayerRoleTypes)RoleComboBox.SelectedItem,
+                    Position = (PositionTypes) PositionComboBox.SelectedItem,
                 };
             }
         }

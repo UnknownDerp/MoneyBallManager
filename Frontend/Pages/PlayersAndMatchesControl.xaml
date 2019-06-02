@@ -8,9 +8,13 @@
              xmlns:colorConstants="clr-namespace:Frontend.Colors"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid >
-        <Grid Background="{x:Static colorConstants:ColorConstants.Background}">
+        <StackPanel Background="{x:Static colorConstants:ColorConstants.Background}" Orientation="Horizontal">
             <StackPanel Height="Auto">
-                <ListBox Name="PlayersListBox" Style="{StaticResource ListBoxStyle}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" Height="Auto" HorizontalAlignment="Left" MinHeight="950" DataContextChanged="PlayersListBox_OnDataContextChanged">
+                <ListBox Name="PlayersListBox" Style="{StaticResource ListBoxStyle}" 
+                         ItemContainerStyle="{StaticResource ListBoxItemStyle}" 
+                         Height="Auto" HorizontalAlignment="Left" MinHeight="950" 
+                         DataContextChanged="PlayersListBox_OnDataContextChanged"
+                         SelectionChanged="PlayersListBox_OnSelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
@@ -42,6 +46,22 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
-        </Grid>
+            <StackPanel x:Name="InformationPanel" Visibility="Collapsed" Orientation="Horizontal">
+                    <StackPanel>
+                        <Label Content="Name:"/>
+                        <Label Content="Club:"/>
+                        <Label Content="Height:"/>
+                        <Label Content="Weight:"/>
+                        <Label Content="Position:"/>
+                   </StackPanel>
+                <StackPanel>
+                    <Label x:Name="NameLabel"/>
+                    <Label x:Name="ClubLabel"/>
+                    <Label x:Name="HeightLabel"/>
+                    <Label x:Name="WeightLabel"/>
+                    <Label x:Name="PositionLabel"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

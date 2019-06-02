@@ -20,28 +20,19 @@ using Frontend.Extensions;
 
 namespace Frontend.Pages
 {
-    /// <summary>
-    /// Interaction logic for PlayersAndMatchesControl.xaml
-    /// </summary>
     public partial class PlayersAndMatchesControl : UserControl
     {
         private readonly ObservableCollection<Player> _players;
+
         public PlayersAndMatchesControl()
         {
             InitializeComponent();
-            var dbCommun = new DatabaseCommunicator();
-            _players = new ObservableCollection<Player>(dbCommun.GetAll<Player>());
+            var dbCommunicator = new DatabaseCommunicator();
+            _players = new ObservableCollection<Player>(dbCommunicator.GetAll<Player>());
             PlayersListBox.ItemsSource = _players;
             DataContext = this;
         }
-        //public void ListBoxResize(double height)
-        //{
-        //    var newValue = height - 133;
-        //    if (newValue > 0)
-        //    {
-        //        PlayersListBox.Height = newValue;
-        //    }
-        //}
+
         private void AddPlayerButtonClick(object sender, RoutedEventArgs e)
         {
             var addPlayerDialog = new AddPlayerDialog() { Owner = Window.GetWindow(this) };
@@ -65,6 +56,19 @@ namespace Frontend.Pages
         private void PlayersListBox_OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             PlayersListBox.Items.Refresh();
+        }
+
+        private void PlayersListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PlayersListBox.SelectedItem is Player selectedPlayer)
+            {
+                InformationPanel.Visibility = Visibility.Visible;
+                NameLabel.Content = selectedPlayer.Name;
+                ClubLabel.Content = selectedPlayer.Club.Name;
+                HeightLabel.Content = $"{selectedPlayer.Height} cm";
+                WeightLabel.Content = $"{selectedPlayer.Weight} kg";
+                PositionLabel.Content = $"{selectedPlayer.PlayerRole.ToString()} {selectedPlayer.Position.ToString()}";
+            }
         }
     }
 }

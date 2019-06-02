@@ -6,9 +6,6 @@ using Frontend.MatchPitch;
 
 namespace Frontend.Pages
 {
-    /// <summary>
-    /// Interaction logic for TacticsTabControl.xaml
-    /// </summary>
     public partial class TacticsTabControl : UserControl
     {
         public TacticsTabControl()
