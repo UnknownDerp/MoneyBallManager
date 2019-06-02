@@ -37,7 +37,7 @@ namespace Frontend.Pages
         {
             var addPlayerDialog = new AddPlayerDialog() { Owner = Window.GetWindow(this) };
             var result = addPlayerDialog.ShowDialog();
-            if (result != null && result == true)
+            if (result.HasValue && result.Value)
             {
                 _players.AddAndSave(addPlayerDialog.Player);
             }
@@ -68,6 +68,22 @@ namespace Frontend.Pages
                 HeightLabel.Content = $"{selectedPlayer.Height} cm";
                 WeightLabel.Content = $"{selectedPlayer.Weight} kg";
                 PositionLabel.Content = $"{selectedPlayer.PlayerRole.ToString()} {selectedPlayer.Position.ToString()}";
+            }
+        }
+
+        private void UploadPhotoButton_Click(object sender, RoutedEventArgs e)
+        {
+            var fileDialog = new Microsoft.Win32.OpenFileDialog()
+            {
+                DefaultExt = ".png",
+                Filter = "PNG Files (*.png)|*.png|JPEG Files (*.jpeg)|*.jpeg|JPG Files (*.jpg)|*.jpg",
+                Multiselect = false,
+                Title = "Upload Player Picture"
+            };
+            var result = fileDialog.ShowDialog();
+            if (result.HasValue && result.Value)
+            {
+                var filename = fileDialog.FileName;
             }
         }
     }

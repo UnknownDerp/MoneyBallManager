@@ -46,22 +46,33 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
-            <StackPanel x:Name="InformationPanel" Visibility="Collapsed" Orientation="Horizontal">
+            <StackPanel x:Name="InformationPanel" Visibility="Collapsed" Orientation="Horizontal" Margin="10">
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0, 0, 5, 0" Orientation="Vertical">
+                    <Border BorderBrush="Black" BorderThickness="1" Height="185" Width="185" >
+                        <Image Height="180" Width="180" />
+                    </Border>
+                    <Button Style="{StaticResource ButtonStyle}" Width="150" Content="Upload Photo" Margin="5" Click="UploadPhotoButton_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
                     <StackPanel>
                         <Label Content="Name:"/>
                         <Label Content="Club:"/>
                         <Label Content="Height:"/>
                         <Label Content="Weight:"/>
                         <Label Content="Position:"/>
-                   </StackPanel>
-                <StackPanel>
-                    <Label x:Name="NameLabel"/>
-                    <Label x:Name="ClubLabel"/>
-                    <Label x:Name="HeightLabel"/>
-                    <Label x:Name="WeightLabel"/>
-                    <Label x:Name="PositionLabel"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label x:Name="NameLabel"/>
+                        <Label x:Name="ClubLabel"/>
+                        <Label x:Name="HeightLabel"/>
+                        <Label x:Name="WeightLabel"/>
+                        <Label x:Name="PositionLabel"/>
+                    </StackPanel>
                 </StackPanel>
+
             </StackPanel>
+            
         </StackPanel>
     </Grid>
 </UserControl>
+<!--Source="C:\Users/Goustmachine/Desktop/Hoyte.PNG"-->
